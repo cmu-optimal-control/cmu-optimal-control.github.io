@@ -18,6 +18,8 @@ timeline:
   - '4:30 PM'
   - '5:00 PM'
   - '5:30 PM'
+  - '6:00 PM'
+  - '6:30 PM'
 schedule:
   - name: Monday
   - name: Tuesday
