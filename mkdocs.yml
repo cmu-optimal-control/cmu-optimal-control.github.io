@@ -1,0 +1,74 @@
+site_name: CMU Optimal Control 16-745
+nav:
+  - Home: index.md
+  - Course Notes:
+    - Home: Notes/notes_home.md
+    - Dynamics:
+      - Notes/dynamics/lec1.md
+      - Notes/dynamics/lec2.md
+    - Optimization:
+      - Notes/optimization/lec3.md 
+      - Notes/optimization/lec4.md
+  # - Syllabus (from mkdocs):
+  - Syllabus: syllabus.md 
+  - Lectures: lectures.md 
+  - Recitations: recitations.md
+  - Homeworks: homeworks/homeworks_home.md
+
+  - Quizzes: quizzes.md
+
+# site_url: https://james-willett.github.io/mkdocs-material-youtube-tutorial/
+theme:
+  name: material
+  features:
+    - navigation.sections  # Sections are included in the navigation on the left.
+    - navigation.expand
+    - toc.integrate  # Table of contents is integrated on the left; does not appear separately on the right.
+    - header.autohide  # header disappears as you scroll
+  icon:
+    logo: "material/rocket-outline"  # Equinox logo in top left
+  favicon: "images/favicon.ico"
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+
+repo_url: https://github.com/Optimal-Control-16-745
+
+extra_css:
+  - stylesheets/extra.css
+
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
