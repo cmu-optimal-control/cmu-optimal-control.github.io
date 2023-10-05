@@ -12,55 +12,34 @@ This website has the following:
 
 ## Teaching Staff
 
-
-
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-
-
-<!-- <img style="float: sdf;" src="images/cmu-seal-70k.png">
-
-Continue markdown text... -->
-
 <div style="display: flex; align-items: center;">
     <!-- Left side: Image -->
-    <img src="images/zac_circle.png" alt="Person's Image" style="max-width: 100px; margin-right: 20px;">
+    <img src="/images/zac_circle.png" alt="Person's Image" style="max-width: 100px; margin-right: 20px;">
 
     <!-- Right side: Bio -->
-    <div>
+    <div style="margin-top: -30px;"> 
         <h2>Zachary Manchester</h2>
-        <p>
-            Instructor
+        <p style="margin-top: -10px;"> 
+            Instructor <br> <a href = "mailto: zacm@cmu.edu">zacm@cmu.edu</a>
         </p>
     </div>
 </div>
+
 
 <div style="display: flex; align-items: center;">
     <!-- Left side: Image -->
-    <img src="images/kevin_circle.png" alt="Person's Image" style="max-width: 100px; margin-right: 20px;">
+    <img src="/images/kevin_circle.png" alt="Person's Image" style="max-width: 100px; margin-right: 20px;">
 
     <!-- Right side: Bio -->
-    <div>
+    <div style="margin-top: -30px;"> 
         <h2>Kevin Tracy</h2>
-        <p>
-            Teaching Assistant
+        <p style="margin-top: -10px;"> 
+            Teaching Assistant <br> <a href = "mailto: ktracy@cmu.edu">ktracy@cmu.edu</a>
         </p>
     </div>
 </div>
 
-<!-- <style>
-    img {
-        width: 128px;
-        height: 128px;
-        object-fit: cover;
-        border-radius: 50%;
-    }
-</style> -->
 
-<!-- <img src="images/zac.jpeg" alt="" /> -->
 
 ## Syllabus
 

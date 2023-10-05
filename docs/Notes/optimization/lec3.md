@@ -1,1 +1,0 @@
-# lecture 3 sdf

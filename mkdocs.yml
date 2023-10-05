@@ -2,13 +2,13 @@ site_name: CMU Optimal Control 16-745
 nav:
   - Home: index.md
   - Course Notes:
-    - Home: Notes/notes_home.md
+    - Home: course_notes/notes_home.md
     - Dynamics:
-      - Notes/dynamics/lec1.md
-      - Notes/dynamics/lec2.md
+      - course_notes/dynamics/lec1.md
+      - course_notes/dynamics/lec2.md
     - Optimization:
-      - Notes/optimization/lec3.md 
-      - Notes/optimization/lec4.md
+      - course_notes/optimization/lec3.md 
+      - course_notes/optimization/lec4.md
   # - Syllabus (from mkdocs):
   - Syllabus: syllabus.md 
   - Lectures: lectures.md 

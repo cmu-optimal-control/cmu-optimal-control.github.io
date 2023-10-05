@@ -1,4 +1,4 @@
-# lecture 1 
+# Introduction and Dynamics 
 
 ## first subtopic 
 
