@@ -1,9 +1,4 @@
-# 2024 
 
-| Lecture     | Topics| Materials |
-| ----------- | -----------         | | 
-
-# 2023 
 | Lecture     | Topics| Materials |
 | ----------- | -----------         | | 
 | 1     | Introduction and Dynamics      |[video](https://youtu.be/6rUdAOCNXAU?si=YeY1J_Qo8MD-uSep), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/main/Lecture%201/Intro.pdf), [code](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%201) |
