@@ -1,6 +1,6 @@
 <!-- # Syllabus TITLE MY GY -->
 
-# Syllabus (from #.md)
+# Syllabus
 
 ## Course Description
 
@@ -71,7 +71,7 @@ This is a course about how to make robots move through and interact with their e
 	\item There will be no exams. Instead, students will form groups of up to five to complete a project on a topic of their choice.
 \end{itemize} -->
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+<!-- For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ## Code Annotation Examples
 
@@ -142,4 +142,4 @@ def bubble_sort(items):
 
 $$ \begin{align} a = \begin{bmatrix} A \\ B \end{bmatrix} \end{align} $$
 
-here is some text with some inline $x=4$ stuff in here
+here is some text with some inline $x=4$ stuff in here -->
