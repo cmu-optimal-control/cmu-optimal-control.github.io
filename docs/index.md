@@ -1,7 +1,8 @@
 
 # 16-745: Optimal Control & Reinforcement Learning
 
-[Piazza](https://piazza.com/cmu/spring2024/16745/home){ .md-button } [Github](https://github.com/Optimal-Control-16-745){ .md-button } [YouTube](https://www.youtube.com/@roboticexplorationlab3724/videos){ .md-button }
+[Piazza](https://piazza.com/cmu/spring2024/16745/home){ .md-button } [Canvas](https://canvas.cmu.edu/courses/39938
+){ .md-button } [Github](https://github.com/Optimal-Control-16-745){ .md-button } [YouTube](https://www.youtube.com/@roboticexplorationlab3724/videos){ .md-button }
 
 
 Welcome to 16-745 Optimal Control and Reinforcement Learning at Carnegie Mellon University!
@@ -87,11 +88,83 @@ This is a course about how to make robots move through and interact with their e
 - Recitation will be held Fridays at based on survey.
 - Office hours will be based on survey.
 - Homework assignments will be due by 11:59 PM Eastern time on Wednesdays. Two weeks will be given to complete each assignment.
-- item GitHub will be used to distribute assignments and GradeScope will be used for submissions.
-- item [Piazza](https://piazza.com/cmu/spring2024/16745/home) will be used for general discussion and Q&A outside of class and office hours.
-- item There will be no exams. Instead, students will form groups of up to five to complete a project on a topic of their choice.
+- GitHub will be used to distribute assignments and GradeScope will be used for submissions.
+- [Piazza](https://piazza.com/cmu/spring2024/16745/home) will be used for general discussion and Q&A outside of class and office hours.
+- There will be no exams. Instead, students will form groups of up to five to complete a project on a topic of their choice.
 
-## Schedule (tentative)
+## Learning Objectives 
+By the end of this course, students should be able to do the following:
+
+1. Analyze the stability of dynamical systems
+2. Design LQR controllers that stabilize equilibria and trajectories
+3. Use offline trajectory optimization to design trajectories for nonlinear systems
+4. Use online convex optimization to implement model-predictive control
+5. Understand the effects of stochasticity and model uncertainty
+6. Directly optimize feedback policies when good models are unavailable
+
+## Learning Resources
+
+There is no textbook required for this course. Video recordings of lectures and lecture notes will be posted online. Additional references for further reading will be provided with each lecture. Relavent (free) background material is available in the [background](background.md) section of this website.
+
+## Homework
+
+Four homeworks will be assigned during the semester. Students will have at least two weeks to complete each assignment. All homework will be distributed and collected using GitHub. Solutions and grades will be returned within one week of homework due dates.
+
+## Grading
+
+Grading will be based on:
+
+| Weight | Criteria|
+|------|-------|
+|50% | Project |
+|40% | Homework |
+|10% | Quizzes/participation |
+
+Attendance during lectures is not required to earn a full participation grade. Students can also participate through any combination of office hours, Piazza discussions, project presentations, and by offering constructive feedback about the course to the instructors.
+
+## Project Guidelines
+
+Students should work in groups of 1--5 to complete a substantial final project. The goal is for students to apply the coarse content to their own research. Project proposals will be solicited on the first homework and topics will be selected in consultation with the instructors.
+
+Project grades will be based on a short presentation given during the last week of class and a final report submitted via Google drive by May 10 [Anywhere on Earth](https://time.is/Anywhere_on_Earth). Reports should be written in the form of a 6 page (plus references) ICRA or IROS conference paper using the standard [two-column IEEE format](https://www.ieee.org/conferences/publishing/templates.html). Sections should include an abstract, introduction and/or background to motivate your problem, 2--3 main technical sections on your contributions, conclusions, and references. Grading will be based on the following criteria:
+
+| Weight | Criteria|
+|------|-------|
+|10% | Class presentation |
+|10% | Adherence to IEEE formatting and length requirements |
+|10% | Innovation & Creativity: Is what you did new/cool/interesting? Convince me. |
+|30% | Clarity of presentation: Can I understand what you did from your writing + plots? |
+|40% | Technical correctness: Are your results reasonable? Is your code correct? |
+
+## Course Policies
+
+**Late Homework:** Students are allowed a budget of 6 late days for turning in homework with no penalty throughout the semester. They may be used together on one assignment, or separately on multiple assignments. Beyond these six days, no other late homework will be accepted.
+
+
+**Accommodations for Students with Disabilities:** If you have a disability and are registered with the Office of Disability Resources, I encourage you to use their online system to notify me of your accommodations and discuss your needs with me as early in the semester as possible. I will work with you to ensure that accommodations are provided as appropriate. If you suspect that you may have a disability and would benefit from accommodations but are not yet registered with the Office of Disability Resources, I encourage you to contact them at [access@andrew.cmu.edu](mailto:access@andrew.cmu.edu).
+
+
+**Statement of Support for Students' Health \& Well-Being:** Take care of yourself. Do your best to maintain a healthy lifestyle this semester by eating well, exercising, avoiding drugs and alcohol, getting enough sleep, and taking some time to relax. This will help you achieve your goals and cope with stress.
+
+If you or anyone you know experiences any academic stress, difficult life events, or feelings like anxiety or depression, we strongly encourage you to seek support. Counseling and Psychological Services (CaPS) is here to help: call 412-268-2922 and visit [http://www.cmu.edu/counseling](http://www.cmu.edu/counseling). Consider reaching out to a friend, faculty, or family member you trust for help getting connected to the support that can help.
+
+
+*If you or someone you know is feeling suicidal or in danger of self-harm, call someone immediately, day or night:*
+
+*CaPS: 412-268-2922*
+
+*Re:solve Crisis Network: 888-796-8226*
+
+*If the situation is life threatening, call the police:*
+
+*On campus: CMU Police: 412-268-2323*
+
+*Off campus: 911*
+
+If you have questions about this or your coursework, please let me know. Thank you, and have a great semester.
+
+
+## Schedule
 
 | Week | Dates | Topics | Assignments |
 |------|-------|--------|-------------|
@@ -111,19 +184,6 @@ This is a course about how to make robots move through and interact with their e
 | 14   | Apr 16 <br> Apr 18  | Case Study: How to Walk <br> TBD | |
 | 15   | Apr 23 <br> Apr 25  | Project Presentations <br> Project Presentations | |
 
-## Project Guidelines
-
-Students should work in groups of 1--5 to complete a substantial final project. The goal is for students to apply the coarse content to their own research. Project proposals will be solicited on the first homework and topics will be selected in consultation with the instructors.
-
-Project grades will be based on a short presentation given during the last week of class and a final report submitted via Google drive by May 10 [Anywhere on Earth](https://time.is/Anywhere_on_Earth). Reports should be written in the form of a 6 page (plus references) ICRA or IROS conference paper using the standard [two-column IEEE format](https://www.ieee.org/conferences/publishing/templates.html). Sections should include an abstract, introduction and/or background to motivate your problem, 2--3 main technical sections on your contributions, conclusions, and references. Grading will be based on the following criteria:
-
-| Weight | Criteria|
-|------|-------|
-|10% | Class presentation |
-|10% | Adherence to IEEE formatting and length requirements |
-|10% | Innovation & Creativity: Is what you did new/cool/interesting? Convince me. |
-|30% | Clarity of presentation: Can I understand what you did from your writing + plots? |
-|40% | Technical correctness: Are your results reasonable? Is your code correct? |
 
 <!-- | Week | Dates | Topics | Assignments |
 |-------|---------|------------------|---------|

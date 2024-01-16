@@ -12,7 +12,7 @@
 | Resource      | Description                              |
 | ----------- | ----------- |
 | [Numerical Optimization, Nocedal and Wright](https://www.math.uci.edu/~qnie/Publications/NumericalOptimization.pdf)| The best book for general purpose (nonconvex) optimization. Implementation/algorithmic details on many common solution methods for convex and nonconvex problems. Interior point methods, active set methods, SQP, quasi-Newton methods. |
-| [Convex Optimization](https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf)| Stephen Boyd's book, the bible for Convex optimization. |
+| [Convex Optimization](https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf)| Stephen Boyd's book, the Bible for Convex optimization. |
 | [CMU Convex Lectures](https://www.stat.cmu.edu/~ryantibs/convexopt/) | Ryan Tibshirani's convex lecture slides. |
 | [Stanford Convex Lectures](https://web.stanford.edu/class/ee364a/lectures.html) | Stephen Boyd's lecture slides. |
 | [PDIP QP Solver](https://stanford.edu/~boyd/papers/pdf/code_gen_impl.pdf) | CVXGEN paper with all of the great implementation details for a classic primal-dual interior point (PDIP) method for solving quadratic programs (QPs). |
