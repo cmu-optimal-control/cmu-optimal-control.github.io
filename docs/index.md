@@ -71,6 +71,19 @@ This is a course about how to make robots move through and interact with their e
 
 <div style="display: flex; align-items: center;">
     <!-- Left side: Image -->
+    <img src="/images/headshots/arun.png" alt="Person's Image" style="max-width: 100px; margin-right: 20px;">
+
+    <!-- Right side: Bio -->
+    <div style="margin-top: -30px;"> 
+        <h2>Arun Bishop</h2>
+        <p style="margin-top: -10px;"> 
+            Teaching Assistant <br> <a href = "mailto: arunleob@cmu.edu">arunleob@cmu.edu</a>
+        </p>
+    </div>
+</div>
+
+<div style="display: flex; align-items: center;">
+    <!-- Left side: Image -->
     <img src="/images/headshots/sam.png" alt="Person's Image" style="max-width: 100px; margin-right: 20px;">
 
     <!-- Right side: Bio -->
