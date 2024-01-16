@@ -13,12 +13,17 @@ nav:
   # - Syllabus: syllabus.md 
   - Lectures: lectures.md 
   - Recitations: recitations.md
-  - Homeworks: homeworks/homeworks_home.md
+  - Piazza: piazza.md
+  # - Homeworks: homeworks/homeworks_home.md
 
-  - Quizzes: quizzes.md
+  # - Quizzes: quizzes.md
+
 
 theme:
   name: material
+  palette:
+    primary: custom
+    accent: #2596be
   features:
     - navigation.sections  # Sections are included in the navigation on the left.
     - navigation.expand
