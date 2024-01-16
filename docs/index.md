@@ -97,7 +97,7 @@ This is a course about how to make robots move through and interact with their e
 
 ## Logistics 
 
-- Lectures will be held Tuesdays and Thursdays 5:00--6:20 PM Eastern time in TEP 1403. Lectures will also be live streamed on zoom and recorded for later viewing.
+- Lectures will be held Tuesdays and Thursdays 5:00-6:20 PM Eastern time in TEP 1403. Lectures will also be live streamed on zoom and recorded for later viewing. **The Zoom link for lectures is available on [Canvas](https://canvas.cmu.edu/courses/39938).**
 - Recitation will be held Fridays at based on survey.
 - Office hours will be based on survey.
 - Homework assignments will be due by 11:59 PM Eastern time on Wednesdays. Two weeks will be given to complete each assignment.

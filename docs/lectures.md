@@ -1,4 +1,6 @@
-# 2023 
+# 2024
+
+Lectures will be streamed live on Zoom, with the link from [Canvas](https://canvas.cmu.edu/courses/39938). After the lecture, the recording and all related materials will be made avaiable here.
 
 | Lecture     | Topics| Materials |
 | ----------- | -----------         | | 
