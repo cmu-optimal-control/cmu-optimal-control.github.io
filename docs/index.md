@@ -2,7 +2,7 @@
 # 16-745: Optimal Control & Reinforcement Learning
 
 [Piazza](https://piazza.com/cmu/spring2024/16745/home){ .md-button } [Canvas](https://canvas.cmu.edu/courses/39938
-){ .md-button } [Github](https://github.com/Optimal-Control-16-745){ .md-button } [YouTube](https://www.youtube.com/@roboticexplorationlab3724/videos){ .md-button }
+){ .md-button } [Gradescope](https://www.gradescope.com/courses/711335){ .md-button } [Github](https://github.com/Optimal-Control-16-745){ .md-button } [YouTube](https://www.youtube.com/@roboticexplorationlab3724/videos){ .md-button }
 
 
 Welcome to 16-745 Optimal Control and Reinforcement Learning at Carnegie Mellon University!
@@ -102,7 +102,7 @@ This is a course about how to make robots move through and interact with their e
 - Office hours will be based on survey.
 - Homework assignments will be due by 11:59 PM Eastern time on Wednesdays. Two weeks will be given to complete each assignment.
 - GitHub will be used to distribute assignments and GradeScope will be used for submissions.
-- [Piazza](https://piazza.com/cmu/spring2024/16745/home) will be used for general discussion and Q&A outside of class and office hours.
+- Piazza will be used for general discussion and Q&A outside of class and office hours.
 - There will be no exams. Instead, students will form groups of up to five to complete a project on a topic of their choice.
 
 ## Learning Objectives 
