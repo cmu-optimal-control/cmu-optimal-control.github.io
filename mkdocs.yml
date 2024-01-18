@@ -13,6 +13,7 @@ nav:
   # - Syllabus: syllabus.md 
   - Lectures: lectures.md 
   - Recitations: recitations.md
+  - Office Hours: office_hours.md
   - Piazza: piazza.md
   # - Homeworks: homeworks/homeworks_home.md
 
@@ -23,7 +24,6 @@ theme:
   name: material
   palette:
     primary: custom
-    accent: #2596be
   features:
     - navigation.sections  # Sections are included in the navigation on the left.
     - navigation.expand
