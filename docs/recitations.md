@@ -1,4 +1,18 @@
-# recitations-2023
+## 2024
+### Recitations
+| Recitation #     | Topics|     Materials  |
+| ----------- | ----------- |---           | 
+| 1     |  Linear Systems, Taylor Series  |[video](https://youtu.be/97JZi5ztc3c?si=YyChhlIZy_MdUp89), [slides](https://github.com/Optimal-Control-16-745/recitations-2024/blob/main/1_19/1-19-recitation.pdf) |
+
+### Useful Links 
+
+[**Youtube recitation playlist**](https://www.youtube.com/playlist?list=PLR-CEg9er7kFfMQU9c3P8J77H3yKb4pTK)
+
+[**Github Repo**](https://github.com/Optimal-Control-16-745/recitations-2024)
+
+## 2023 (last year)
+
+### Recitations
 
 | Recitation #     | Topics|     Materials  |
 | ----------- | ----------- |---           | 
@@ -13,7 +27,7 @@
 | 9     |  DIRCOL, iLQR, HW3  |[video](https://youtu.be/yGD4SsiRafE), [slides](https://github.com/Optimal-Control-16-745/recitations-2023/blob/main/3_24_recitation.pdf) | 
 | 10     |  Differentiable Collision Detection  |[video](https://youtu.be/QLc0vrAigac), [slides](https://github.com/Optimal-Control-16-745/recitations-2023/blob/main/3_31_recitation/3_31_recitation.pdf), [code](https://github.com/Optimal-Control-16-745/recitations-2023/tree/main/3_31_recitation) | 
 
-## Useful Links 
+### Useful Links 
 
 [**Youtube recitation playlist**](https://www.youtube.com/playlist?list=PLR-CEg9er7kH11A7Sg1rATCf5Noa7wauu)
 
