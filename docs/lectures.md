@@ -5,6 +5,7 @@ Lectures will be streamed live on Zoom, with the link from [Canvas](https://canv
 | Lecture     | Topics| Materials |
 | ----------- | -----------         | | 
 | 1     | Introduction and Dynamics      |[video](https://www.youtube.com/watch?v=Kj88Nory8ec), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%201) |
+| 2     | Dynamics Discretization & Stability      |[video](https://youtu.be/Ne6oUqjAT6o), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%202) |
 
 
 # 2023 
