@@ -98,9 +98,10 @@ This is a course about how to make robots move through and interact with their e
 ## Logistics 
 
 - Lectures will be held Tuesdays and Thursdays 5:00-6:20 PM Eastern time in TEP 1403. Lectures will also be live streamed on zoom and recorded for later viewing. **The Zoom link for lectures is available on [Canvas](https://canvas.cmu.edu/courses/39938).**
-- Recitation will be held Fridays at based on survey.
-- Office hours will be based on survey.
-- Homework assignments will be due by 11:59 PM Eastern time on Wednesdays. Two weeks will be given to complete each assignment.
+- Recitation will be held Fridays 11:00-12:00 PM on zoom
+- Office hours are [here](office_hours.md) 
+- Homework assignments will be due by 11:59 PM Eastern time, two weeks after they are assigned.
+- Quizzes are released every Friday, due the following Tuesday at 11:59 PM Eastern time.
 - GitHub will be used to distribute assignments and GradeScope will be used for submissions.
 - Piazza will be used for general discussion and Q&A outside of class and office hours.
 - There will be no exams. Instead, students will form groups of up to five to complete a project on a topic of their choice.
