@@ -184,7 +184,7 @@ If you have questions about this or your coursework, please let me know. Thank y
 | 1    | Jan 16 <br> Jan 18 | Course Overview, & Dynamics Intro <br> Stability, Discrete-Time Dynamics | Survey <br> HW0 Out |
 | 2    | Jan 23 <br> Jan 25 | Optimization Intro <br> Numerical Optimization Pt. 1 | HW0 Due <br> HW1 Out |
 | 3    | Jan 30 <br> Feb 1  | Numerical Optimization Pt. 2 & Optimal Control Intro <br> Pontryagin, Shooting Methods, & LQR Intro | |
-| 4    | Feb 6 <br> Feb 8    | LQR as a QP & Riccati Equation <br> Dynamic Programming & Intro to Convexity | HW 1 Due <br> HW 2 Out |
+| 4    | Feb 6 <br> Feb 8    | LQR as a QP & Riccati Equation <br> Dynamic Programming & Intro to Convexity |  <br> HW 1 Due, HW 2 Out |
 | 5    | Feb 13 <br> Feb 15  | Convex Model-Predictive Control <br> Intro to Trajectory Optimization, Iterative LQR, & DDP | |
 | 6    | Feb 20 <br> Feb 22  | DDP with Constraints and Free Final Time <br> Direct Trajectory Optimization, Collocation, & SQP | HW2 Due <br> HW3 Out |
 | 7    | Feb 27 <br> Feb 29  | Attitude Intro: SO(3) & Quaternions <br> Optimizing with Attitude | |
