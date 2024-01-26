@@ -3,6 +3,8 @@
 | Recitation #     | Topics|     Materials  |
 | ----------- | ----------- |---           | 
 | 1     |  Linear Systems, Taylor Series  |[video](https://youtu.be/97JZi5ztc3c?si=YyChhlIZy_MdUp89), [slides](https://github.com/Optimal-Control-16-745/recitations-2024/blob/main/1_19/1-19-recitation.pdf) |
+| 2     |  Derivatives, Constrained Optimization  |[video](https://youtu.be/uk2hs1RgOak), [slides](https://github.com/Optimal-Control-16-745/recitations-2024/blob/main/1_26/1-26-recitation.pdf) |
+
 
 ### Useful Links 
 
