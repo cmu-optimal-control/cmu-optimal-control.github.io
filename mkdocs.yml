@@ -11,7 +11,8 @@ nav:
   #     - course_notes/optimization/lec3.md 
   #     - course_notes/optimization/lec4.md
   # - Syllabus: syllabus.md 
-  - Lectures: lectures.md 
+  - Lectures: lectures.md
+  - Course Notes: course_notes.md
   - Recitations: recitations.md
   - Office Hours: office_hours.md
   - Homeworks: homeworks.md
@@ -70,5 +71,6 @@ markdown_extensions:
 
 
 extra_javascript:
+  - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
