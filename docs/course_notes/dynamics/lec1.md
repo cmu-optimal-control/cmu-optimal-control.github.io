@@ -9,24 +9,26 @@
 
 ## Introduction
 
-To start things off, we're going to go through some background material. Specifically, we're first going to provide a crash-course on dynamics, which defines the behavior of many systems that we will later attempt to "control" to do what we want. Before we do "optimal control," we need to understand what we're going to control.
+To start things off, we're going to go through some background material. Specifically, we're first going to provide a crash-course on dynamics, which defines the behavior of many robotics systems that we will later attempt to "control" to do what we want. Before we do "optimal control," we need to understand what we're going to control and what it means to control a robot.
 
-We'll first start with a high-level overview of **continuous-time dynamics** to provide a background to those unfamiliar with topics like differential equations. In later lectures, we will learn how to *discretize* them to make them useful for computers (e.g., our future controllers).
+**Disclaimer:** This course will have an emphasis on **robotics applications, specifically mechanical systems,** but many of the methods learned are applicable to other types of systems such as chemical processes, which is where optimal control actually originated from.
+
+We'll begin with a high-level overview of **continuous-time dynamics, equilibria, and stability** to provide a background to those unfamiliar with topics like dynamics and differential equations. This will provide a *basic* foundation to describe how robotic systems move and interact with their environment. In later lectures, we will learn how to *discretize* them to make them useful for computers (e.g., our future controllers).
 
 ## Starting Example (Pendulum)
 
-Let's start with a real-life example: a **pendulum**, the world's simplest nonlinear dynamical system:
+Let's start with a real-life example: a **pendulum**, the world's simplest nonlinear dynamical system (or robot),
 
 ![image](../../../images/lectures/lecture_1/lecture_1_pendulum_setup.png)
 
-where we have a point mass of mass $m$ subject to gravity, $g$, while being suspended by a massless string of length $l$.
+where we have a point mass of mass $m$ subject to gravity, $g$, while being suspended by a massless rod of length $l$ that can swing about a pivot point.
 
-If we want to describe the pendulum, we need to:
+If we want to describe the motion of the pendulum, we need to:
 
-1. Define *scalar* variables that represent the system,
+1. Define scalar variables that *represent/parameterize* the system,
 2. Describe how those variables *evolve* to explain the system's behavior.
 
-In the case of the pendulum, the variables will be the pendulum's **angle**, $\theta$, and the **angular velocity**, $\dot{\theta}$. To be concise, we can stack them into a *vector* $\in \mathbb{R}^{2}$ (a.k.a. "in 2D space of real numbers"):
+In the case of the pendulum, we somehow want to parameterize its swinging motion. First, we need to way to characterize *where* the pendulum is during the swing; one way of doing so is keeping track of the pendulum's **angle**, $\theta$, which gives us one variable. However, that's not enough - if we want to be able to know where the pendulum will be in the future (i.e., how it will evolve), we also need to know how *fast* its swinging. Therefore, let's also keep track of the pendulum's **angular velocity**, $\dot{\theta}$. To be concise, we can stack our variables into a *vector* $\in \mathbb{R}^{2}$ (i.e., in 2D space of real numbers):
 
 $$
 x = \begin{bmatrix}
@@ -55,19 +57,19 @@ $$
 
 where $u = \tau$. To provide names to everything, we call $x$ the pendulum's **state** and $f(x, u)$ the pendulum's **dynamics model**. 
 
-Now, let's say we want to make the pendulum "do something;" specifically, move counter-clockwise. Then we need to apply some sort of *input* to the system. In the pendulum's case, we can apply a torque (from an imaginary motor at the base) which we defined as $u$. As hinted at before, we call $u$ our **control input**.
+Now, let's say we want to make the pendulum "do something." Specifically, we want to make it move counter-clockwise. Then we need to apply some sort of *input* to the system. In the pendulum's case, we can apply a torque (from an imaginary motor at the base) which we defined as $u$. As hinted earlier, we call $u$ our **control input**.
 
 ## Continuous-Time Dynamics
 
 ### General Form
 
-While the pendulum is a nice, specific, real-life example, we need to be able to express things more generally to extend the idea to other systems. The most general/generic way to write continuous-time dynamics for a *smooth sytem* is in the form
+While the pendulum is a nice, specific, real-life example, we need to be able to express things more generally to extend the idea to other systems. The most general/generic way to write continuous-time dynamics for a *smooth sytem* is in the form,
 
 $$
 \dot{x} = f(x, u).
 $$
 
-Just like we did for the pendulum, we call $f$ the **dynamics**, $x \in \mathbb{R}^{n}$ the **state** (assume a vector for now), and $u \in \mathbb{R}^{m}$ the **input**. From a robotics perspective, smooth means that it doesn't involve things like rigid contact that cause discontinuous/switching behavior (we'll look at this later).
+Just like we did for the pendulum, we call $f$ the **dynamics**, $x \in \mathbb{R}^{n}$ the **state** (assume a vector for now), and $u \in \mathbb{R}^{m}$ the **input**. From a robotics perspective, smooth means that it doesn't involve things like rigid contact that cause discontinuous/switching behaviors. We'll study this in greater detail in later lectures.
 
 Specifically for a mechanical system (most things in robotics), the state can be split into 2 pieces:
 
@@ -78,19 +80,26 @@ x = \begin{bmatrix}
 \end{bmatrix},
 $$
 
-where $q$ is called the **configuration/pose** and $v$ is the **velocity**. In the case of the pendulum, the configuration would be the angle ($q = \theta$) and the velocity would be the angular velocity ($v = \dot{\theta}$).
+where $q$ is called the **configuration/pose** and $v$ is the **velocity**. In the case of the pendulum, the configuration would be the angle, and the velocity would be the angular velocity:
 
-**NOTE:** $q$ is not always a vector. For example, in the case of the pendulum, we kind of lied... $q$ (i.e., $\theta$) can only be between $0$ and $2\pi$; therefore, we say the $q \in S^{1}$ (i.e., "in a 1D circle"). If $\dot{\theta}$ can be any real number, then what does $x$ look like? **HINT:** it's not $\mathbb{R}^{2}$.
+$$
+\begin{align}
+    q & = \theta \\
+    v & = \dot{\theta}
+\end{align}
+$$
+
+**NOTE:** $q$ is not always a vector. For example, in the case of the pendulum, we kind of lied... $\theta$ can only be between $0$ and $2\pi$. Therefore, we say the $q \in \mathbb{S}^{1}$ (i.e., in a 1D circle). If $\dot{\theta}$ can be any real number, then what does $x$ look like? **HINT:** it's not $\mathbb{R}^{2}$.
 
 ### Control-Affine Systems
 
-Often times, we see common structures across so many dynamical systems that we give them labels. One kind of dynamical systems is called **control-affine systems**, which are in the form
+Often times, we see common structures across so many dynamical systems that we give them labels. One kind is called **control-affine systems**, which is in the form,
 
 $$
 \dot{x} = f_{0}(x) + B(x)u,
 $$
 
-where $f_{0}$ is called the **drift** term, and $B(x)$ is known as the **input Jacobian**. This expression essentially just means that the dynamics is linear w.r.t ("with respect to") $u$. It turns out most systems, including *all* mechanical systems, can be written in this form. In the case of the pendulum:
+where $f_{0}$ is called the **drift** term, and $B(x)$ is known as the **input Jacobian**. This expression essentially just means that the dynamics is linear with respect to $u$. It turns out most systems, including *all* mechanical systems, can be written in this form. In the case of the pendulum:
 
 $$
 f_{0}(x) = \begin{bmatrix}
@@ -110,13 +119,13 @@ $$
 M(q)\dot{v} + C(q, v) = B(q)u + F,
 $$
 
-where $M(q)$ is called the **mass matrix**, $C(q, v)$ is the **dynamic bias**, $B(q)$ is again the **input Jacobian**, and $F$ represents all other **external forces**. As we noted before, $q$ is not always a vector, which implies that in a lot of cases, $\dot{q} \neq v$; therefore, we must generally say that
+where $M(q)$ is called the **mass matrix**, $C(q, v)$ is the **dynamic bias**, $B(q)$ is again the **input Jacobian**, and $F$ represents all other **external forces**. As we noted before, $q$ is not always a vector, which implies that in a lot of cases, $\dot{q} \neq v$. Therefore, we must generally say that
 
 $$
 \dot{q} = G(q)v.
 $$
 
-We'll call this expression the **velocity kinematics**, and this will show up a lot in *3D rotations* (e.g., quaternions, rotation matrices, and if you're sadistic... Euler angles), which we'll look at in later lectures. 
+We call this expression the **velocity kinematics**, and this will show up a lot in *3D rotations* (e.g., quaternions, rotation matrices, and if you're sadistic... Euler angles), which we'll study in later lectures. 
 
 When applied to our pendulum example, the manipulator equation's terms are
 
@@ -137,11 +146,11 @@ $$.
 
 One nice thing about this is that $M(q)$ is *always invertible* if we make good choices for the coordinates of $x$. In addition, inverting $M(q)$ is the most expensive operation here, which limits the time-complexity of solving this equation to $O(n^{3})$. This is good because we care about speed; our controller having to run in real-time when on an actual robot. Unfortunately, this can still be expensive for a big robot with a lot of links (e.g., humanoid), but there are smarter ways of dealing with this that can be $O(n)$.
 
-**NOTE:** Practically speaking, you should never solve for $M(q)^{-1}$ unless it's constant. As alluded to earlier, there are applicable, smart solvers/methods for solving linear systems ($Ax=b$) that can achieve $O(n)$.
+**NOTE:** Practically speaking, you should almost never solve for $M(q)^{-1}$ directly. As alluded to earlier, there are applicable, smart solvers/methods for solving linear systems ($Ax=b$) that can achieve $O(n)$.
 
 ### Linear Systems
 
-Linear systems are our most specific, but still widely-used form of modeling dynamical systems. In fact, it's hard to overstate just how *important* linear systems are in control theory; we can solve them exactly in closed-form, analyze their behaviors rigorously, and approximate many systems with linear models. In fact, they're so well-studied that there are whole classes/textbooks on them, but for our purposes, we'll just provide a high-level overview.
+Linear systems are our most specific, but still widely-used form of modeling dynamical systems. In fact, it's hard to overstate just how *important* linear systems are in control theory; we can solve them exactly in closed-form, analyze their behaviors rigorously, and approximate many systems with linear models. In fact, they're so well-studied that there are whole classes/textbooks on them, but for our purposes, we'll provide a high-level overview here.
 
 As hinted by the name, linear systems have the form:
 
@@ -149,7 +158,7 @@ $$
 \dot{x} = A(t)x + B(t)u.
 $$
 
-If $A(t)$ and $B(t)$ are constant (i.e., $A(t) = A$ and $B(t) = B$), then the system is called **time invariant**. The system is **time varying** otherwise.
+If $A(t)$ and $B(t)$ are constant (i.e., $A(t) = A$, $B(t) = B$), then the system is called **time invariant**. The system is **time varying** otherwise.
 
 As previously mentioned, linear systems are *super important* in control, one of those reasons being that we often *approximate* nonlinear systems *locally* with linear ones using **Taylor series**:
 
@@ -158,6 +167,8 @@ $$
 $$
 
 It turns out this works surprisingly well in controls. So well that we can often design bread-and-butter controllers with the *linearized* model and still run it successfully on the nonlinear one. This is usually a good first step!
+
+![image](../../../images/lectures/lecture_1/lecture_1_be_wise_linearize.png)
 
 ## Equilibria
 
@@ -169,7 +180,7 @@ $$
 \dot{x} = f(x, u) = 0.
 $$
 
-In the case of the pendulum, the equilibria, $x_{eq}$, are where our pendulum are pointing down and straight upright; if we leave the pendulum at those spots, it shouldn't move. We can determine the points (i.e., the states) that correspond to the equilibria:
+In the case of the pendulum, the equilibria, $x_{eq}$, are where our pendulum is pointing straight down and upright respectively; if we leave the pendulum at those spots, it shouldn't move. We can determine the points (i.e., the states) that correspond to the equilibria:
 
 $$
 \dot{x} = \begin{bmatrix}
@@ -191,7 +202,7 @@ $$
 
 ### First Control Problem
 
-Let's use this opportunity to present and solve our first control problem: what $u$ do we need to apply to move the equilibria to $\theta = \frac{\pi}{2}$?
+Let's use this opportunity to solve our first control problem: what $u$ do we need to apply to move the equilibria to $\theta = \frac{\pi}{2}$?
 
 ![image](../../../images/lectures/lecture_1/lecture_1_pendulum_right_angle.png)
 
@@ -213,7 +224,7 @@ $$
 \end{align}
 $$
 
-Like above, in general, we get a root-finding problem in $u$:
+Like this pendulum example, we *generally* get a root-finding problem in $u$:
 
 $$
 f(x^{*}, u) = 0
@@ -247,7 +258,7 @@ $$
 
 In the case of the pendulum, we can intuitively see that the bottom and upright equilibria correspond to a stable and unstable one respectively. However, for this higher-dimensional system, how do come up with a mathematically equivalent version? We know that the higher-dimensional equivalent to a scalar derivative is the Jacobian ($\frac{\partial f}{\partial x}$), but what's the equivalent to the Jacobian being positive or negative? 
 
-The answer lies in the eigenvalues! If we linearize the dynamics at an equilibrium and perform an eigendecomposition on $\frac{\partial f}{\partial x}$:
+The answer lies in the eigenvalues! If we linearize the dynamics at an equilibrium and perform an eigendecomposition of $\frac{\partial f}{\partial x}$:
 
 $$
 \begin{align}
@@ -267,7 +278,7 @@ $$
 \end{align}
 $$
 
-then we can see that we essentially decoupled the higher-dimensional system into *multiple 1D* systems. Therefore we can evaluate each eigenvalue of $\frac{\partial f}{\partial x}$ in a similar manner as before:
+then we can see that we essentially decoupled the higher-dimensional system into *multiple 1D* systems where $\lambda_{i} \in \mathbb{C}$ (i.e., a complex number) is the $i$th eigenvalue of $\frac{\partial f}{\partial x}$. Therefore we can evaluate each eigenvalue of $\frac{\partial f}{\partial x}$ in a similar manner as before:
 
 $$
 \begin{align}
@@ -277,7 +288,7 @@ $$
 \end{align}
 $$
 
-**NOTE:** If *any* of the eigenvalues' real parts are positive, then the system is *unstable*. Also, remember to evaluate $\frac{\partial f}{\partial x}$ at the equilibrium of interest!
+**NOTE:** If *any* of the eigenvalues' real parts is positive, then the system is *unstable*. Also, remember to evaluate $\frac{\partial f}{\partial x}$ at the equilibrium of interest!
 
 Applying our stability analysis to the pendulum:
 
@@ -304,8 +315,10 @@ $$
 \end{align}
 $$
 
-As expected, at $\theta = \pi$, a positive real component of an eigenvalue ($\sqrt{\frac{g}{l}}$) exists, so the pendulum is unstable about the upright equilibrium. This matches our intuition.
+As expected, at $\theta = \pi$, a positive real component of an eigenvalue $\Big(\sqrt{\frac{g}{l}}\Big)$ exists, so the pendulum is unstable about the upright equilibrium. This matches our intuition.
 
-At $\theta = 0$, we see that the real component is equal to 0. This isn't in our notes - what's going on? In the case of the pendulum, we can see that without damping, the pendulum will just keep swinging about the bottom equilibrium. We call this behavior **marginally stable**.
+At $\theta = 0$, we see that the real component is equal to 0. This isn't in our notes - what's going on?
+
+In the case of the pendulum, we can see that without damping, the pendulum will just keep swinging about the bottom equilibrium. We call this behavior **marginally stable**.
 
 **NOTE:** In general, if $\text{Re}\Big(\text{eigvals}\Big[\frac{\partial f}{\partial x}\Big|_{x_{eq}}\Big]\Big) = 0$, we can't say anything about the stability! It just so happens that the pendulum is marginally stable, but in general, we can't make any conclusions about the system's stability about that equilibrium. We'll have to go to fancier methods, like **Lyapunov stability analysis**. 
