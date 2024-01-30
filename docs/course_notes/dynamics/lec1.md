@@ -13,7 +13,7 @@ To start things off, we're going to go through some background material. Specifi
 
 We'll first start with a high-level overview of **continuous-time dynamics** to provide a background to those unfamiliar with topics like differential equations. In later lectures, we will learn how to *discretize* them to make them useful for computers (e.g., our future controllers).
 
-## Begin with a Real Example (Pendulum)
+## Starting Example (Pendulum)
 
 Let's start with a real-life example: a **pendulum**, the world's simplest nonlinear dynamical system:
 
@@ -26,7 +26,7 @@ If we want to describe the pendulum, we need to:
 1. Define *scalar* variables that represent the system,
 2. Describe how those variables *evolve* to explain the system's behavior.
 
-In the case of the pendulum, the variables will be the pendulum's **angle**, $\theta$, and the **angular velocity**, $\dot{\theta}$. To be concise, we can stack them into a *vector* $\in \R^{2}$ (a.k.a. "in 2D space of real numbers"):
+In the case of the pendulum, the variables will be the pendulum's **angle**, $\theta$, and the **angular velocity**, $\dot{\theta}$. To be concise, we can stack them into a *vector* $\in \mathbb{R}^{2}$ (a.k.a. "in 2D space of real numbers"):
 
 $$
 x = \begin{bmatrix}
@@ -41,7 +41,7 @@ $$
 ml^{2}\ddot{\theta} + mgl\sin(\theta) = \tau,
 $$
 
-where $\tau \in \R$ is the **torque** applied to the pendulum. Just like before with the variables, we can express this ODE in a vector form:
+where $\tau \in \mathbb{R}$ is the **torque** applied to the pendulum. Just like before with the variables, we can express this ODE in a vector form:
 
 $$
 \begin{bmatrix}
@@ -67,7 +67,7 @@ $$
 \dot{x} = f(x, u).
 $$
 
-Just like we did for the pendulum, we call $f$ the **dynamics**, $x \in \R^{n}$ the **state** (assume a vector for now), and $u \in \R^{m}$ the **input**. From a robotics perspective, smooth means that it doesn't involve things like rigid contact that cause discontinuous/switching behavior (we'll look at this later).
+Just like we did for the pendulum, we call $f$ the **dynamics**, $x \in \mathbb{R}^{n}$ the **state** (assume a vector for now), and $u \in \mathbb{R}^{m}$ the **input**. From a robotics perspective, smooth means that it doesn't involve things like rigid contact that cause discontinuous/switching behavior (we'll look at this later).
 
 Specifically for a mechanical system (most things in robotics), the state can be split into 2 pieces:
 
@@ -80,7 +80,7 @@ $$
 
 where $q$ is called the **configuration/pose** and $v$ is the **velocity**. In the case of the pendulum, the configuration would be the angle ($q = \theta$) and the velocity would be the angular velocity ($v = \dot{\theta}$).
 
-**NOTE:** $q$ is not always a vector. For example, in the case of the pendulum, we kind of lied... $q$ (i.e., $\theta$) can only be between $0$ and $2\pi$; therefore, we say the $q \in S^{1}$ (i.e., "in a 1D circle"). If $\dot{\theta}$ can be any real number, then what does $x$ look like? **HINT:** it's not $\R^{2}$.
+**NOTE:** $q$ is not always a vector. For example, in the case of the pendulum, we kind of lied... $q$ (i.e., $\theta$) can only be between $0$ and $2\pi$; therefore, we say the $q \in S^{1}$ (i.e., "in a 1D circle"). If $\dot{\theta}$ can be any real number, then what does $x$ look like? **HINT:** it's not $\mathbb{R}^{2}$.
 
 ### Control-Affine Systems
 
@@ -169,7 +169,7 @@ $$
 \dot{x} = f(x, u) = 0.
 $$
 
-In the case of the pendulum, the equilibria, $x_{eq}$, are where our pendulum are pointing down and straight upright; if I leave the pendulum at those spots, it shouldn't move. We can determine the points (i.e., the states) that correspond to the equilibria:
+In the case of the pendulum, the equilibria, $x_{eq}$, are where our pendulum are pointing down and straight upright; if we leave the pendulum at those spots, it shouldn't move. We can determine the points (i.e., the states) that correspond to the equilibria:
 
 $$
 \dot{x} = \begin{bmatrix}
@@ -187,24 +187,30 @@ $$
 \end{bmatrix}.
 $$
 
+![image](../../../images/lectures/lecture_1/lecture_1_pendulum_equilibria.png)
+
 ### First Control Problem
 
-Let's use this opportunity to present and solve our first control problem: what $u$ do I need to apply to move the equilibria to $\theta = \frac{\pi}{2}$?
+Let's use this opportunity to present and solve our first control problem: what $u$ do we need to apply to move the equilibria to $\theta = \frac{\pi}{2}$?
+
+![image](../../../images/lectures/lecture_1/lecture_1_pendulum_right_angle.png)
 
 Using the expression of equilibria for our pendulum, we can solve for $u$ accordingly:
 
 $$
-\dot{x} = \begin{bmatrix}
-    \dot{\theta}\\
-    -\frac{g}{l}\sin{\theta} + \frac{1}{ml^{2}}u
-\end{bmatrix} = \begin{bmatrix}
-    0 \\
-    0
-\end{bmatrix}, \\
-\space \\
-\Rightarrow \frac{1}{ml^{2}}u = \frac{g}{l}\sin{\theta}, \\
-\space \\
-\Rightarrow u = mgl.
+\begin{align}
+    \dot{x} = \begin{bmatrix}
+        \dot{\theta}\\
+        -\frac{g}{l}\sin{\theta} + \frac{1}{ml^{2}}u
+    \end{bmatrix} & = \begin{bmatrix}
+        0 \\
+        0
+    \end{bmatrix}, \\
+    \space \\
+    \Rightarrow \frac{1}{ml^{2}}u & = \frac{g}{l}\sin{\theta}, \\
+    \space \\
+    \Rightarrow u & = mgl.
+\end{align}
 $$
 
 Like above, in general, we get a root-finding problem in $u$:
@@ -217,73 +223,85 @@ $$
 
 Not only do we care about *where* the equilibria are, but also how **stable** they are. This is absolutely another *core* concept in control, so we strongly suggest you pay attention. What we're generally asking with regard to **stability** is the following: **"when will we stay stay 'near' an equilibrium point under perturbations?"**
 
-We'll demonstrate by example by looking at a made-up, stupid-looking 1D system ($x \in \R$) with no control inputs:
+We'll demonstrate by example by looking at a made-up, stupid-looking 1D system ($x \in \mathbb{R}$) with no control inputs:
 
+![image](../../../images/lectures/lecture_1/lecture_1_1d_stability.png)
 
-We can mark the equilibria by finding the roots, which are circled in black. Let's look at the middle one first; if I choose a point just to its the right, the sign of $\dot{x}$ is negative, which is going to push me *back* to the equilibrium. If I choose a point on the left, then the positive $\dot{x}$ is also going to push me back towards the equilibrium. Because we'll wind up back at the equilibrium from any direction, we call the middle equilibrium point a **stable** equilibrium.
+We can mark the equilibria by finding the roots, which are circled in black. Let's look at the middle one first; if we choose a point just to its the right, the sign of $\dot{x}$ is negative, which is going to push me *back* to the equilibrium. If we choose a point on the left, then the positive $\dot{x}$ is also going to push me back towards the equilibrium. Because we'll wind up back at the equilibrium from any direction, we call the middle equilibrium point a **stable** equilibrium.
 
-If I look at either the left or the right equilibrium, I can play the same game; if I choose a point close but to the right, the sign of $\dot{x}$ is positive, which is going to push me *away* from the equilibrium. A point on the left will also push me away, so no matter what, we'll be moving away from the equilibrium. As you can guess, we call the left and right equilibrium points **unstable** equilibria.
+![image](../../../images/lectures/lecture_1/lecture_1_1d_stability_stable.png)
+
+If we look at either the left or the right equilibrium, we can play the same game; if we choose a point close but to the right, the sign of $\dot{x}$ is positive, which is going to push me *away* from the equilibrium. A point on the left will also push me away, so no matter what, we'll be moving away from the equilibrium. As you can guess, we call the left and right equilibrium points **unstable** equilibria.
+
+![image](../../../images/lectures/lecture_1/lecture_1_1d_stability_unstable.png)
 
 From a more mathematical standpoint, we can see that the derivatives of $f$ at the equilibria determine the stability:
 
 $$
-\frac{\partial f}{\partial x}\Bigg|_{x_{eq}} < 0 \quad \Rightarrow \quad \text{stable}, \\
-\space \\
-\frac{\partial f}{\partial x}\Bigg|_{x_{eq}}  > 0 \quad \Rightarrow \quad \text{unstable}. \\
+\begin{align}
+    \frac{\partial f}{\partial x}\Bigg|_{x_{eq}} & < 0 \quad \Rightarrow \quad \text{stable}, \\
+    \space \\
+    \frac{\partial f}{\partial x}\Bigg|_{x_{eq}} & > 0 \quad \Rightarrow \quad \text{unstable}. \\
+\end{align}
 $$
 
 In the case of the pendulum, we can intuitively see that the bottom and upright equilibria correspond to a stable and unstable one respectively. However, for this higher-dimensional system, how do come up with a mathematically equivalent version? We know that the higher-dimensional equivalent to a scalar derivative is the Jacobian ($\frac{\partial f}{\partial x}$), but what's the equivalent to the Jacobian being positive or negative? 
 
-The answer lies in the eigenvalues! If I linearize the dynamics at an equilibrium and perform an eigendecomposition on $\frac{\partial f}{\partial x}$:
+The answer lies in the eigenvalues! If we linearize the dynamics at an equilibrium and perform an eigendecomposition on $\frac{\partial f}{\partial x}$:
 
 $$
-\dot{x} = \frac{\partial f}{\partial x}\Bigg|_{x_{eq}}x, \\
-\space \\
-\Rightarrow \dot{x} = T \Lambda T^{-1}x, \\
-\space \\
-\Rightarrow T^{-1}\dot{x} = \Lambda T^{-1}x, \\
-\space \\
-\Rightarrow \dot{z} = \Lambda z, \\
-\space \\
-\Rightarrow \dot{z} = \begin{bmatrix}
-\lambda_{1} & & 0 \\
-& \ddots & \\
-0 & & \lambda_{n}
-\end{bmatrix}z, \\
+\begin{align}
+    \dot{x} & = \frac{\partial f}{\partial x}\Bigg|_{x_{eq}}x, \\
+    \space \\
+    \Rightarrow \dot{x} & = T \Lambda T^{-1}x, \\
+    \space \\
+    \Rightarrow T^{-1}\dot{x} & = \Lambda T^{-1}x, \\
+    \space \\
+    \Rightarrow \dot{z} & = \Lambda z, \\
+    \space \\
+    \Rightarrow \dot{z} & = \Bigg[\begin{smallmatrix}
+    \lambda_{1} & & 0 \\
+    & \ddots & \\
+    0 & & \lambda_{n}
+    \end{smallmatrix}\Bigg]z, \\
+\end{align}
 $$
 
 then we can see that we essentially decoupled the higher-dimensional system into *multiple 1D* systems. Therefore we can evaluate each eigenvalue of $\frac{\partial f}{\partial x}$ in a similar manner as before:
 
 $$
-\text{Re}\Big(\text{eigvals}\Big[\frac{\partial f}{\partial x}\Big|_{x_{eq}}\Big]\Big) < 0 \quad \Rightarrow \quad \text{stable}, \\
-\space \\
-\text{Re}\Big(\text{eigvals}\Big[\frac{\partial f}{\partial x}\Big|_{x_{eq}}\Big]\Big) > 0 \quad \Rightarrow \quad \text{unstable}. \\
+\begin{align}
+    \text{Re}\Big(\text{eigvals}\Big[\frac{\partial f}{\partial x}\Big|_{x_{eq}}\Big]\Big) & < 0 \quad \Rightarrow \quad \text{stable}, \\
+    \space \\
+    \text{Re}\Big(\text{eigvals}\Big[\frac{\partial f}{\partial x}\Big|_{x_{eq}}\Big]\Big) & > 0 \quad \Rightarrow \quad \text{unstable}. \\
+\end{align}
 $$
 
-**NOTE:** If *any* of the eigenvalues' real parts are positive, then the system is *unstable*.\
-**NOTE:** Remember to evaluate $\frac{\partial f}{\partial x}$ at the equilibrium of interest!
+**NOTE:** If *any* of the eigenvalues' real parts are positive, then the system is *unstable*. Also, remember to evaluate $\frac{\partial f}{\partial x}$ at the equilibrium of interest!
 
 Applying our stability analysis to the pendulum:
 
 $$
-f(x) = \begin{bmatrix}
-    \dot{\theta}\\
-    -\frac{g}{l}\sin{\theta}
-\end{bmatrix} \quad \Rightarrow \quad \frac{\partial f}{\partial x} = \begin{bmatrix}
-    0 & 1 \\
-    -\frac{g}{l}\cos{\theta} & 0
-\end{bmatrix}, \\
-\space \\
-\space \\
-\frac{\partial f}{\partial x} \Bigg|_{\theta = \pi} = \begin{bmatrix}
-    0 & 1 \\
-    \frac{g}{l} & 0
-\end{bmatrix} \quad \Rightarrow \quad \text{eigvals}\Big(\frac{\partial f}{\partial x}\Big|_{\theta = \pi}\Big) = \pm \sqrt{\frac{g}{l}}, \\
-\space \\
-\frac{\partial f}{\partial x} \Bigg|_{\theta = 0} = \begin{bmatrix}
-    0 & 1 \\
-    -\frac{g}{l} & 0
-\end{bmatrix} \quad \Rightarrow \quad \text{eigvals}\Big(\frac{\partial f}{\partial x}\Big|_{\theta = 0}\Big) = 0 \pm i\sqrt{\frac{g}{l}}. \\
+\begin{align}
+    f(x) & = \begin{bmatrix}
+        \dot{\theta}\\
+        -\frac{g}{l}\sin{\theta}
+    \end{bmatrix} \quad \Rightarrow \quad \frac{\partial f}{\partial x} = \begin{bmatrix}
+        0 & 1 \\
+        -\frac{g}{l}\cos{\theta} & 0
+    \end{bmatrix}, \\
+    \space \\
+    \space \\
+    \frac{\partial f}{\partial x} \Bigg|_{\theta = \pi} & = \begin{bmatrix}
+        0 & 1 \\
+        \frac{g}{l} & 0
+    \end{bmatrix} \quad \Rightarrow \quad \text{eigvals}\Big(\frac{\partial f}{\partial x}\Big|_{\theta = \pi}\Big) = \pm \sqrt{\frac{g}{l}}, \\
+    \space \\
+    \frac{\partial f}{\partial x} \Bigg|_{\theta = 0} & = \begin{bmatrix}
+        0 & 1 \\
+        -\frac{g}{l} & 0
+    \end{bmatrix} \quad \Rightarrow \quad \text{eigvals}\Big(\frac{\partial f}{\partial x}\Big|_{\theta = 0}\Big) = 0 \pm i\sqrt{\frac{g}{l}}. \\
+\end{align}
 $$
 
 As expected, at $\theta = \pi$, a positive real component of an eigenvalue ($\sqrt{\frac{g}{l}}$) exists, so the pendulum is unstable about the upright equilibrium. This matches our intuition.
