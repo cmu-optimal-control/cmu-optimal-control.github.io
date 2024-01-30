@@ -1,4 +1,4 @@
-# Continuous-Time Dynamics & Equilibria
+# 1. Continuous-Time Dynamics & Equilibria
 
 ## Topics Covered
 
@@ -19,7 +19,7 @@ We'll begin with a high-level overview of **continuous-time dynamics, equilibria
 
 Let's start with a real-life example: a **pendulum**, the world's simplest nonlinear dynamical system (or robot),
 
-![image](../../../images/lectures/lecture_1/lecture_1_pendulum_setup.png)
+![image](../../images/lectures/lecture_1/lecture_1_pendulum_setup.png)
 
 where we have a point mass of mass $m$ subject to gravity, $g$, while being suspended by a massless rod of length $l$ that can swing about a pivot point.
 
@@ -168,7 +168,7 @@ $$
 
 It turns out this works surprisingly well in controls. So well that we can often design bread-and-butter controllers with the *linearized* model and still run it successfully on the nonlinear one. This is usually a good first step!
 
-![image](../../../images/lectures/lecture_1/lecture_1_be_wise_linearize.png)
+![image](../../images/lectures/lecture_1/lecture_1_be_wise_linearize.png)
 
 ## Equilibria
 
@@ -198,13 +198,13 @@ $$
 \end{bmatrix}.
 $$
 
-![image](../../../images/lectures/lecture_1/lecture_1_pendulum_equilibria.png)
+![image](../../images/lectures/lecture_1/lecture_1_pendulum_equilibria.png)
 
 ### First Control Problem
 
 Let's use this opportunity to solve our first control problem: what $u$ do we need to apply to move the equilibria to $\theta = \frac{\pi}{2}$?
 
-![image](../../../images/lectures/lecture_1/lecture_1_pendulum_right_angle.png)
+![image](../../images/lectures/lecture_1/lecture_1_pendulum_right_angle.png)
 
 Using the expression of equilibria for our pendulum, we can solve for $u$ accordingly:
 
@@ -236,15 +236,15 @@ Not only do we care about *where* the equilibria are, but also how **stable** th
 
 We'll demonstrate by example by looking at a made-up, stupid-looking 1D system ($x \in \mathbb{R}$) with no control inputs:
 
-![image](../../../images/lectures/lecture_1/lecture_1_1d_stability.png)
+![image](../../images/lectures/lecture_1/lecture_1_1d_stability.png)
 
 We can mark the equilibria by finding the roots, which are circled in black. Let's look at the middle one first; if we choose a point just to its the right, the sign of $\dot{x}$ is negative, which is going to push me *back* to the equilibrium. If we choose a point on the left, then the positive $\dot{x}$ is also going to push me back towards the equilibrium. Because we'll wind up back at the equilibrium from any direction, we call the middle equilibrium point a **stable** equilibrium.
 
-![image](../../../images/lectures/lecture_1/lecture_1_1d_stability_stable.png)
+![image](../../images/lectures/lecture_1/lecture_1_1d_stability_stable.png)
 
 If we look at either the left or the right equilibrium, we can play the same game; if we choose a point close but to the right, the sign of $\dot{x}$ is positive, which is going to push me *away* from the equilibrium. A point on the left will also push me away, so no matter what, we'll be moving away from the equilibrium. As you can guess, we call the left and right equilibrium points **unstable** equilibria.
 
-![image](../../../images/lectures/lecture_1/lecture_1_1d_stability_unstable.png)
+![image](../../images/lectures/lecture_1/lecture_1_1d_stability_unstable.png)
 
 From a more mathematical standpoint, we can see that the derivatives of $f$ at the equilibria determine the stability:
 

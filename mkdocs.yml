@@ -2,25 +2,16 @@ site_name: CMU Optimal Control 16-745
 nav:
   - Home: index.md
   - Background: background.md
-  # - Course Notes:
-  #   - Home: course_notes/notes_home.md
-  #   - Dynamics:
-  #     - course_notes/dynamics/lec1.md
-  #     - course_notes/dynamics/lec2.md
-  #   - Optimization:
-  #     - course_notes/optimization/lec3.md 
-  #     - course_notes/optimization/lec4.md
-  # - Syllabus: syllabus.md 
   - Lectures: lectures.md
-  - Course Notes: course_notes.md
+  - Course Notes: 
+    - Home: course_notes/notes_home.md
+    - Dynamics: 
+      - course_notes/dynamics/lec1.md
   - Recitations: recitations.md
   - Office Hours: office_hours.md
   - Homeworks: homeworks.md
   - Quizzes: quizzes.md
   - Piazza: piazza.md
-  # - Homeworks: homeworks/homeworks_home.md
-
-  # - Quizzes: quizzes.md
 
 
 theme:
@@ -28,12 +19,13 @@ theme:
   palette:
     primary: custom
   features:
-    - navigation.sections  # Sections are included in the navigation on the left.
-    - navigation.expand
+    # - navigation.sections  # Sections are included in the navigation on the left.
+    # - navigation.expand
     - toc.integrate  # Table of contents is integrated on the left; does not appear separately on the right.
     - header.autohide  # header disappears as you scroll
+
   icon:
-    logo: "material/rocket-outline"  # Equinox logo in top left
+    logo: "material/rocket-outline"  # rocket logo in top left
   favicon: "images/favicon.ico"
   features:
     - navigation.tabs
@@ -71,6 +63,6 @@ markdown_extensions:
 
 
 extra_javascript:
-  - javascripts/mathjax.js
+  # - javascripts/mathjax.js # this wasn't working, latex should work tho
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
