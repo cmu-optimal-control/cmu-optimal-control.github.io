@@ -3,19 +3,19 @@
 ## Topics Covered
 
 - Introduction
-- Pendulum Example
+- Motivating Example (Pendulum)
 - Continuous-Time Dynamics
 - Equilibria
 
 ## Introduction
 
-To start things off, we're going to go through some background material. Specifically, we're first going to provide a crash-course on dynamics, which defines the behavior of many robotics systems that we will later attempt to "control" to do what we want. Before we do "optimal control," we need to understand what we're going to control and what it means to control a robot.
+To start things off, we're going to go through some background material. Specifically, we're first going to provide a crash course on dynamics, which defines the behavior of many robotics systems that we will later attempt to "control" to do what we want. Before we do "optimal control," we need to understand what we're going to control and what it means to control a robot.
 
-**Disclaimer:** This course will have an emphasis on **robotics applications, specifically mechanical systems,** but many of the methods learned are applicable to other types of systems such as chemical processes, which is where optimal control actually originated from.
+**Disclaimer:** This course will have an emphasis on **robotics applications, specifically mechanical systems,** but many of the methods are applicable to other types of systems such as chemical processes, which is where optimal control actually originated from.
 
 We'll begin with a high-level overview of **continuous-time dynamics, equilibria, and stability** to provide a background to those unfamiliar with topics like dynamics and differential equations. This will provide a *basic* foundation to describe how robotic systems move and interact with their environment. In later lectures, we will learn how to *discretize* them to make them useful for computers (e.g., our future controllers).
 
-## Starting Example (Pendulum)
+## Motivating Example (Pendulum)
 
 Let's start with a real-life example: a **pendulum**, the world's simplest nonlinear dynamical system (or robot),
 
@@ -46,24 +46,24 @@ $$
 where $\tau \in \mathbb{R}$ is the **torque** applied to the pendulum. Just like before with the variables, we can express this ODE in a vector form:
 
 $$
-\begin{bmatrix}
+f(x, u) = \begin{bmatrix}
     \dot{\theta}\\
     \ddot{\theta}
-\end{bmatrix} = \underbrace{\begin{bmatrix}
+\end{bmatrix} = \begin{bmatrix}
     \dot{\theta}\\
     -\frac{g}{l}\sin(\theta) + \frac{1}{ml^{2}}u
-\end{bmatrix}}_{f(x, u)},
+\end{bmatrix},
 $$
 
 where $u = \tau$. To provide names to everything, we call $x$ the pendulum's **state** and $f(x, u)$ the pendulum's **dynamics model**. 
 
-Now, let's say we want to make the pendulum "do something." Specifically, we want to make it move counter-clockwise. Then we need to apply some sort of *input* to the system. In the pendulum's case, we can apply a torque (from an imaginary motor at the base) which we defined as $u$. As hinted earlier, we call $u$ our **control input**.
+Now, let's say we want to make the pendulum "do something." Let's say we want to make it rotate counter-clockwise. Then we need to apply some sort of *input* to the system. In the pendulum's case, we can apply a torque (from an imaginary motor at the base) which we defined as $u$. As hinted at earlier, we call $u$ our **control input**.
 
 ## Continuous-Time Dynamics
 
 ### General Form
 
-While the pendulum is a nice, specific, real-life example, we need to be able to express things more generally to extend the idea to other systems. The most general/generic way to write continuous-time dynamics for a *smooth sytem* is in the form,
+While the pendulum is a nice, specific, real-life example, we need to be able to express things more generally to extend the same idea to other systems. The most general/generic way to write continuous-time dynamics for a *smooth sytem* is in the form,
 
 $$
 \dot{x} = f(x, u).
@@ -84,8 +84,8 @@ where $q$ is called the **configuration/pose** and $v$ is the **velocity**. In t
 
 $$
 \begin{align}
-    q & = \theta \\
-    v & = \dot{\theta}
+    q & = \theta, \\
+    v & = \dot{\theta}.
 \end{align}
 $$
 
@@ -141,10 +141,10 @@ $$
 \dot{x} = f(x, u) = \begin{bmatrix}
     G(q)v\\
     M(q)^{-1}[B(q)u + F - C]
-\end{bmatrix}
-$$.
+\end{bmatrix}.
+$$
 
-One nice thing about this is that $M(q)$ is *always invertible* if we make good choices for the coordinates of $x$. In addition, inverting $M(q)$ is the most expensive operation here, which limits the time-complexity of solving this equation to $O(n^{3})$. This is good because we care about speed; our controller having to run in real-time when on an actual robot. Unfortunately, this can still be expensive for a big robot with a lot of links (e.g., humanoid), but there are smarter ways of dealing with this that can be $O(n)$.
+One nice thing about this is that $M(q)$ is *always invertible* if we make good choices for the coordinates of $x$. In addition, inverting $M(q)$ is the most expensive operation here, which limits the time-complexity of solving this equation to $O(n^{3})$. This is good because we care about speed; our controller has to run in real-time when on an actual robot. Unfortunately, this can still be expensive for a big robot with a lot of links (e.g., humanoid), but there are smarter ways of dealing with this that can be $O(n)$.
 
 **NOTE:** Practically speaking, you should almost never solve for $M(q)^{-1}$ directly. As alluded to earlier, there are applicable, smart solvers/methods for solving linear systems ($Ax=b$) that can achieve $O(n)$.
 
@@ -166,7 +166,7 @@ $$
 \dot{x} = f(x, u) \quad \Rightarrow \quad A=\frac{\partial f}{\partial x}, \quad B = \frac{\partial f}{\partial u}.
 $$
 
-It turns out this works surprisingly well in controls. So well that we can often design bread-and-butter controllers with the *linearized* model and still run it successfully on the nonlinear one. This is usually a good first step!
+It turns out this works surprisingly well in controls; so well that we can often design bread-and-butter controllers with the *linearized* model and still run it successfully in *nonlinear* settings (e.g., the real world). This is usually a good first step!
 
 ![image](../../images/lectures/lecture_1/lecture_1_be_wise_linearize.png)
 
@@ -174,13 +174,13 @@ It turns out this works surprisingly well in controls. So well that we can often
 
 ### Definition
 
-Switching gears a little bit, let's now talk about another *super important* topic in dynamics, which is **equilibria**. Intuitively, this is a point where a system will "remain at rest." Algebraically, equilibria are the roots of our dynamics:
+Switching gears a little bit, let's now talk about another *super important* topic in dynamics, which is **equilibria**. Intuitively, this is a point where a system will "remain at rest." Algebraically, the equilibria, $x_{eq}$, are the roots of our dynamics, where
 
 $$
 \dot{x} = f(x, u) = 0.
 $$
 
-In the case of the pendulum, the equilibria, $x_{eq}$, are where our pendulum is pointing straight down and upright respectively; if we leave the pendulum at those spots, it shouldn't move. We can determine the points (i.e., the states) that correspond to the equilibria:
+In the case of the pendulum, the equilibria are where our pendulum is pointing straight down and upright respectively; if we leave the pendulum at those spots, it shouldn't move. We can determine the points (i.e., the states) that correspond to the equilibria:
 
 $$
 \dot{x} = \begin{bmatrix}
@@ -238,11 +238,11 @@ We'll demonstrate by example by looking at a made-up, stupid-looking 1D system (
 
 ![image](../../images/lectures/lecture_1/lecture_1_1d_stability.png)
 
-We can mark the equilibria by finding the roots, which are circled in black. Let's look at the middle one first; if we choose a point just to its the right, the sign of $\dot{x}$ is negative, which is going to push me *back* to the equilibrium. If we choose a point on the left, then the positive $\dot{x}$ is also going to push me back towards the equilibrium. Because we'll wind up back at the equilibrium from any direction, we call the middle equilibrium point a **stable** equilibrium.
+We can mark the equilibria by finding the roots, which are circled in black. Let's look at the middle one first; if we choose a point just to its right, the sign of $\dot{x}$ is negative, which is going to push us *back* to the equilibrium. If we choose a point on the left, then the positive $\dot{x}$ is also going to push us back towards the equilibrium. Because we'll wind up back at the equilibrium from any direction, we call the middle equilibrium point a **stable** equilibrium.
 
 ![image](../../images/lectures/lecture_1/lecture_1_1d_stability_stable.png)
 
-If we look at either the left or the right equilibrium, we can play the same game; if we choose a point close but to the right, the sign of $\dot{x}$ is positive, which is going to push me *away* from the equilibrium. A point on the left will also push me away, so no matter what, we'll be moving away from the equilibrium. As you can guess, we call the left and right equilibrium points **unstable** equilibria.
+If we look at either the left or the right equilibrium, we can play the same game; if we choose a point close but to the right, the sign of $\dot{x}$ is positive, which is going to push us *away* from the equilibrium. A point on the left will also push us away, so no matter what, we'll be moving away from the equilibrium. As you can guess, we call the left and right equilibrium points **unstable** equilibria.
 
 ![image](../../images/lectures/lecture_1/lecture_1_1d_stability_unstable.png)
 
@@ -256,18 +256,37 @@ $$
 \end{align}
 $$
 
-In the case of the pendulum, we can intuitively see that the bottom and upright equilibria correspond to a stable and unstable one respectively. However, for this higher-dimensional system, how do come up with a mathematically equivalent version? We know that the higher-dimensional equivalent to a scalar derivative is the Jacobian ($\frac{\partial f}{\partial x}$), but what's the equivalent to the Jacobian being positive or negative? 
+In the case of the pendulum, we can intuitively see that the bottom and upright equilibria correspond to a stable and unstable one respectively. However, for this higher-dimensional system, how do we come up with a mathematically equivalent version? We know that the higher-dimensional equivalent to a scalar derivative is the Jacobian ($\frac{\partial f}{\partial x}$), but what's the equivalent to the Jacobian being positive or negative? 
 
-The answer lies in the eigenvalues! If we linearize the dynamics at an equilibrium and perform an eigendecomposition of $\frac{\partial f}{\partial x}$:
+The answer lies in the eigenvalues! Let us linearize the dynamics at an equilibrium and perform an eigendecomposition of $\frac{\partial f}{\partial x}$:
 
 $$
 \begin{align}
     \dot{x} & = \frac{\partial f}{\partial x}\Bigg|_{x_{eq}}x, \\
     \space \\
+    \Rightarrow \dot{x} & = \underbrace{\Bigg[\begin{smallmatrix}
+        | & & | \\
+        v_{1} & \cdots  & v_{n} \\
+        | & & | \\
+    \end{smallmatrix}\Bigg]}_{T} \underbrace{\Bigg[\begin{smallmatrix}
+    \lambda_{1} & & 0 \\
+    & \ddots & \\
+    0 & & \lambda_{n}
+    \end{smallmatrix}\Bigg]}_{\Lambda} \underbrace{\Bigg[\begin{smallmatrix}
+        | & & | \\
+        v_{1} & \cdots  & v_{n} \\
+        | & & | \\
+    \end{smallmatrix}\Bigg]^{-1}}_{T^{-1}} x \\
     \Rightarrow \dot{x} & = T \Lambda T^{-1}x, \\
     \space \\
     \Rightarrow T^{-1}\dot{x} & = \Lambda T^{-1}x, \\
-    \space \\
+\end{align}
+$$
+
+where $v_{i} \in \mathbb{R}^{n}$ is the $i$th eigenvector of $\frac{\partial f}{\partial x}$ and $\lambda_{i} \in \mathbb{C}$ (i.e., a complex scalar) is the corresponding eigenvalue. By relabeling the linear mapping, $T^{-1}x$, as a new vector, $z$, we can now analyze the system in terms of $z$:
+
+$$
+\begin{align}
     \Rightarrow \dot{z} & = \Lambda z, \\
     \space \\
     \Rightarrow \dot{z} & = \Bigg[\begin{smallmatrix}
@@ -278,7 +297,7 @@ $$
 \end{align}
 $$
 
-then we can see that we essentially decoupled the higher-dimensional system into *multiple 1D* systems where $\lambda_{i} \in \mathbb{C}$ (i.e., a complex number) is the $i$th eigenvalue of $\frac{\partial f}{\partial x}$. Therefore we can evaluate each eigenvalue of $\frac{\partial f}{\partial x}$ in a similar manner as before:
+then we can see that we essentially decoupled the higher-dimensional system into *multiple 1D* systems. Therefore we can evaluate the real parts of each eigenvalue of $\frac{\partial f}{\partial x}$ in a similar manner as before with the scalar case:
 
 $$
 \begin{align}
@@ -317,8 +336,8 @@ $$
 
 As expected, at $\theta = \pi$, a positive real component of an eigenvalue $\Big(\sqrt{\frac{g}{l}}\Big)$ exists, so the pendulum is unstable about the upright equilibrium. This matches our intuition.
 
-At $\theta = 0$, we see that the real component is equal to 0. This isn't in our notes - what's going on?
+At $\theta = 0$, we see that the real components of the eigenvalues are equal to 0. This isn't in our notes - what's going on?
 
 In the case of the pendulum, we can see that without damping, the pendulum will just keep swinging about the bottom equilibrium. We call this behavior **marginally stable**.
 
-**NOTE:** In general, if $\text{Re}\Big(\text{eigvals}\Big[\frac{\partial f}{\partial x}\Big|_{x_{eq}}\Big]\Big) = 0$, we can't say anything about the stability! It just so happens that the pendulum is marginally stable, but in general, we can't make any conclusions about the system's stability about that equilibrium. We'll have to go to fancier methods, like **Lyapunov stability analysis**. 
+**NOTE:** In general, if $\text{Re}\Big(\text{eigvals}\Big[\frac{\partial f}{\partial x}\Big|_{x_{eq}}\Big]\Big) = 0$, we can't say anything about the stability! It just so happens that the pendulum is marginally stable, but in general, we can't make any conclusions about the system's stability about that equilibrium. We'll have to go to fancier methods, like **Lyapunov stability analysis**.
