@@ -8,6 +8,7 @@ Lectures will be streamed live on Zoom, with the link from [Canvas](https://canv
 | 2     | Dynamics Discretization & Stability      |[video](https://youtu.be/Ne6oUqjAT6o), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%202) |
 | 3     | Optimization Pt. 1      |[video](https://www.youtube.com/watch?v=FV8r2o0ZUiM), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%203) |
 | 4     | Optimization Pt. 2      |[video](https://www.youtube.com/watch?v=VPvpe75JHNQ), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%204) |
+| 5     | Optimization Pt. 3      |[video](https://www.youtube.com/watch?v=-f1pu8vsnYw), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%205) |
 
 # 2023 
 
