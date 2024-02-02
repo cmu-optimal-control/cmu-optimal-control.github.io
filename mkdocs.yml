@@ -5,8 +5,8 @@ nav:
   - Lectures: lectures.md
   - Course Notes: 
     - Home: course_notes/notes_home.md
-    - Dynamics: 
-      - course_notes/dynamics/lec1.md
+    - Dynamics: # include lecture title in each md
+      - course_notes/dynamics/lec1.md 
   - Recitations: recitations.md
   - Office Hours: office_hours.md
   - Homeworks: homeworks.md
