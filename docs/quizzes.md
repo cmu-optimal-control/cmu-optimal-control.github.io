@@ -1,8 +1,8 @@
 # Quizzes
 
 
-[Week 1 Quiz](quizzes/week1.pdf)
+[Week 1 Quiz](quizzes/week1.pdf), [solutions](https://github.com/Optimal-Control-16-745/quiz_solutions/blob/main/week_01_quiz_solutions.pdf)
 
-[Week 2 Quiz](quizzes/week2.pdf)
+[Week 2 Quiz](quizzes/week2.pdf), [solutions](https://github.com/Optimal-Control-16-745/quiz_solutions/blob/main/week_02_quiz_solutions.pdf)
 
-[Week 3 Quiz](quizzes/week3.pdf)
+[Week 3 Quiz](quizzes/week3.pdf), [solutions](https://github.com/Optimal-Control-16-745/quiz_solutions/blob/main/week_03_quiz_solutions.pdf)
