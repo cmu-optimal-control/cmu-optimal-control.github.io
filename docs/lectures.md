@@ -10,6 +10,8 @@ Lectures will be streamed live on Zoom, with the link from [Canvas](https://canv
 | 4     | Optimization Pt. 2      |[video](https://www.youtube.com/watch?v=VPvpe75JHNQ), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%204) |
 | 5     | Optimization Pt. 3      |[video](https://www.youtube.com/watch?v=-f1pu8vsnYw), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%205) |
 | 6     | Deterministic Optimal Control Intro      |[video](https://www.youtube.com/watch?v=u9vNBi62HsI), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%206) |
+| 7     | The Linear Quadratic Regulator Three Ways      |[video](https://www.youtube.com/watch?v=LcLCE7KiEB8), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%207) |
+
 
 # 2023 
 
