@@ -14,6 +14,7 @@ Lectures will be streamed live on Zoom, with the link from [Canvas](https://canv
 | 8     | Controllability and Dynamic Programming      |[video](https://www.youtube.com/watch?v=cgRaP_TYZow), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%208) |
 | 9     | Convex Model-Predictive Control      |[video](https://www.youtube.com/watch?v=i-XEj8JY4Y0), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%209) |
 | 10    | Nonlinear Trajectory Optimization | [video](https://www.youtube.com/watch?v=t0vaNTZIC20), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%210) |
+| 11    | Differential Dynamic Programming | [video](https://www.youtube.com/watch?v=qusvkcoHyz0), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%211) |
 
 # 2023 
 
