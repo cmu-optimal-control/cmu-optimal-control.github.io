@@ -7,6 +7,8 @@
 | 3     |  KKT Conditions, Augmented Lagrangian  |[video](https://youtu.be/jyq7_GoT0H4), [slides](https://github.com/Optimal-Control-16-745/recitations-2024/blob/main/2_02/2-02-recitation.pdf) |
 | 4     |  Intro to LQR and Convex.jl |[video](https://youtu.be/ScxZKBW44dY), [slides](https://github.com/Optimal-Control-16-745/recitations-2024/blob/main/2_09/2-09-recitation.pdf)  |
 | 5     |  Dynamic Programming and MPC |[video](https://youtu.be/i-byLUF5oLI), [slides](https://github.com/Optimal-Control-16-745/recitations-2024/blob/main/2_16/2-16-recitation.pdf)  |
+| 6     |  Trajectory Optimization |[video](https://youtu.be/ZExMm8DTcMw), [slides](https://github.com/Optimal-Control-16-745/recitations-2024/blob/main/2_23/2-23-recitation.pdf)  |
+
 
 
 
