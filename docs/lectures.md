@@ -17,6 +17,8 @@ Lectures will be streamed live on Zoom, with the link from [Canvas](https://canv
 | 11    | Differential Dynamic Programming | [video](https://www.youtube.com/watch?v=qusvkcoHyz0), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2011) |
 | 12    | Direct Trajectory Optimization| [video](https://youtu.be/8VAiAxa6-sM?si=OwQXgYkxcPXdHRyC), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2012) |
 | 13    | Dealing with 3D Rotations | [video](https://youtu.be/0ONcoIqfT5E?si=Q1at3Kxm8rOrmg2i), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2013) |
+| 14    | Optimizing Rotations | [video](https://www.youtube.com/watch?v=8InVEfutyrQ), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2014) |
+
 
 # 2023 
 
