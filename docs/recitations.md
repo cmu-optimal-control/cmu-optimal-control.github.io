@@ -10,6 +10,7 @@
 | 6     |  Trajectory Optimization |[video](https://youtu.be/ZExMm8DTcMw), [slides](https://github.com/Optimal-Control-16-745/recitations-2024/blob/main/2_23/2-23-recitation.pdf)  |
 | 7     |  Attitude Part 1 |[video](https://youtu.be/vg15hN5b_mU), [slides](https://github.com/Optimal-Control-16-745/recitations-2024/blob/main/3_01/3-01-recitation.pdf)  |
 | 8     |  Attitude Part 2 |[video](https://youtu.be/pXbu2YYBSmY), [slides](https://github.com/Optimal-Control-16-745/recitations-2024/blob/main/3_15/3-15-recitation.pdf)  |
+| 9     |  Sparse Trajectory Optimizagion |[video](https://youtu.be/MGEW2YSjIBI), [slides](https://github.com/Optimal-Control-16-745/recitations-2024/blob/main/3_22/3-22-recitation.pdf)  |
 
 
 ### Useful Links 
