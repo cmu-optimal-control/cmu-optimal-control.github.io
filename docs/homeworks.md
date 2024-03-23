@@ -16,3 +16,5 @@
 [HW 2](https://github.com/Optimal-Control-16-745/HW2_S24) - Due 2/22 11:59 PM
 
 [HW 3](https://github.com/Optimal-Control-16-745/HW3_S24) - Due 3/21 11:59 PM
+
+[HW 4](https://github.com/Optimal-Control-16-745/HW4_S24) - Due 4/4 11:59 PM
