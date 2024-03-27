@@ -24,10 +24,9 @@ Lectures will be streamed live on Zoom, with the link from [Canvas](https://canv
 | 15     | LQR with Quaternions and Quadrotors (2023 lecture)  |[video](https://youtu.be/AxmE2uTPglg?si=3yci5Z8Dkhttcmsj), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2015/Lecture%2015.pdf), [code](https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2015) | 
 |**Special Topics**|
 | 16     | Hybrid Systems and Legged Robots (2023 lecture)    |[video](https://youtu.be/3k2HXavhaY0?si=5VEvY7aWaGthtOvB), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2016/Lecture%2016.pdf), [code](https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2016) | 
-| 17     | Iterative Learning Control    |[video](https://www.youtube.com/watch?v=sscRS2RMVvw&t=1468s), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/main/Lecture%2017/Lecture%2017.pdf), [code](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2017) | 
-| 18     | Stochastic Optimal Control and LQG     |[video](https://www.youtube.com/watch?v=gYXqNfmEW18), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/main/Lecture%2018/Lecture%2018.pdf), [code](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2018) | 
-| 19     | Kalman Filters and Duality    |[video](https://www.youtube.com/watch?v=D2TvCKTEfbI), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/main/Lecture%2019/Lecture%2019.pdf), [code](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2019) | 
-
+| 17     | Iterative Learning Control    |[video](https://www.youtube.com/watch?v=sscRS2RMVvw&t=1468s), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/master/Lecture%2017/Lecture%2017.pdf), [code](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2017) | 
+| 18     | Stochastic Optimal Control and LQG     |[video](https://www.youtube.com/watch?v=gYXqNfmEW18), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/master/Lecture%2018/Lecture%2018.pdf), [code](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2018) | 
+| 19     | Kalman Filters and Duality    |[video](https://www.youtube.com/watch?v=D2TvCKTEfbI), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/master/Lecture%2019/Lecture%2019.pdf), [code](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2019) | 
 
 # 2023 
 
