@@ -11,7 +11,7 @@
 |6| [questions](quizzes/week6.pdf), [solutions](https://github.com/Optimal-Control-16-745/quiz_solutions/blob/main/week_06_quiz_solutions.pdf) |
 |7| [questions](quizzes/week7.pdf), [solutions](https://github.com/Optimal-Control-16-745/quiz_solutions/blob/main/week_07_quiz_solutions.pdf) |
 |8| [questions](quizzes/week8.pdf), [solutions](https://github.com/Optimal-Control-16-745/quiz_solutions/blob/main/week_08_quiz_solutions.pdf) |
-|9| [questions](quizzes/week9.pdf) |
+|9| [questions](quizzes/week9.pdf), [solutions](https://github.com/Optimal-Control-16-745/quiz_solutions/blob/main/week_09_quiz_solutions.pdf) |
 |10| [questions](quizzes/week10.pdf) |
 
 
