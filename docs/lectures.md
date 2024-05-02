@@ -29,8 +29,7 @@ Lectures will be streamed live on Zoom, with the link from [Canvas](https://canv
 | 19     | Kalman Filters and Duality    |[video](https://www.youtube.com/watch?v=D2TvCKTEfbI), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/master/Lecture%2019/Lecture%2019.pdf), [code](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2019) | 
 | 20     | Convex Relaxation and Landing Rockets |[video](https://www.youtube.com/watch?v=tiwFETCw5lw), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/master/Lecture%2020/Lecture%2020.pdf), [code](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2020) | 
 | 21     | Legged Robots and How to Walk with QPs |[video](https://www.youtube.com/watch?v=O3V2h7-jIzg), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/master/Lecture%2021/Lecture%2021.pdf), [code](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2021) | 
-| 22     | Autonomous Driving |[video](https://www.youtube.com/watch?v=4Fh0wIqaynQ
-), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/master/Lecture%2022/Lecture%2022.pdf), [code](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2022) | 
+| 22     | Autonomous Driving |[video](https://www.youtube.com/watch?v=4Fh0wIqaynQ), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/master/Lecture%2022/Lecture%2022.pdf), [code](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2022) | 
 | 23     | Calculus of Variations and Physics as Optimal Control |[video](https://youtu.be/YbCb44ViwPU?si=eTXiPsourwF-aQ50), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/master/Lecture%2023/Lecture%2023.pdf), [code](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2023) | 
 
 # 2023 
