@@ -1,8 +1,7 @@
 
 # Welcome to 16-745: Optimal Control and Reinforcement Learning at Carnegie Mellon University!
 
-[Piazza](https://piazza.com/cmu/spring2025/16745/home){ .md-button } [Canvas](https://canvas.cmu.edu/courses/39938
-){ .md-button } [Gradescope](https://www.gradescope.com/courses/711335){ .md-button } [Github](https://github.com/Optimal-Control-16-745){ .md-button } [YouTube](https://www.youtube.com/@roboticexplorationlab3724/videos){ .md-button }
+[Piazza](https://piazza.com/cmu/spring2025/16745/home){ .md-button } [Canvas (TBD)](){ .md-button } [Gradescope](https://www.gradescope.com/courses/952874){ .md-button } [Github](https://github.com/Optimal-Control-16-745){ .md-button } [YouTube](https://www.youtube.com/@roboticexplorationlab3724/videos){ .md-button }
 
 ## Course Description
 
@@ -33,7 +32,7 @@ This is a course about how to make robots move through and interact with their e
     <div style="margin-top: -30px;"> 
         <h2>JJ Lee</h2>
         <p style="margin-top: -10px;"> 
-            Teaching Assistant <br> <a href = "mailto: jeonghunlee@cmu.edu">jeonghunlee@cmu.edu</a>
+            Head Teaching Assistant <br> <a href = "mailto: jeonghunlee@cmu.edu">jeonghunlee@cmu.edu</a>
         </p>
     </div>
 </div>
@@ -92,7 +91,7 @@ This is a course about how to make robots move through and interact with their e
 
 ## Logistics 
 
-- Lectures will be held Tuesdays and Thursdays 12:30-1:50 PM EST in GHC 4401. Lectures will also be live streamed on zoom and recorded for later viewing. **The Zoom link for lectures is available on [Canvas](https://canvas.cmu.edu/courses/39938).**
+- Lectures will be held Tuesdays and Thursdays 12:30-1:50 PM EST in GHC 4401. Lectures will also be live streamed on zoom and recorded for later viewing. **The Zoom links for lectures and office hours are available on [Piazza](https://piazza.com/cmu/spring2025/16745/home) and [Canvas (TBD)]().**
 <!-- - Recitation will be held Fridays 11:00-12:00 PM on zoom -->
 - Office hours, lecture schedule, and deadlines can be found on the **course calendar [here](course_calendar.md)**
 - Homework assignments will be due on **Thursdays 11:59 PM EST**, two weeks after they are assigned.
@@ -174,26 +173,28 @@ If you or anyone you know experiences any academic stress, difficult life events
 If you have questions about this or your coursework, please let me know. Thank you, and have a great semester.
 
 
-<!-- ## Schedule
+## Schedule
+
+This is subject to change and will be updated as the semester progresses.
 
 | Week | Dates | Topics | Assignments |
 |------|-------|--------|-------------|
-| 1    | Jan 16 <br> Jan 18 | Course Overview, & Dynamics Intro <br> Stability, Discrete-Time Dynamics | Survey <br> HW0 Out |
-| 2    | Jan 23 <br> Jan 25 | Optimization Intro <br> Numerical Optimization Pt. 1 | HW0 Due <br> HW1 Out |
-| 3    | Jan 30 <br> Feb 1  | Numerical Optimization Pt. 2 & Optimal Control Intro <br> Pontryagin, Shooting Methods, & LQR Intro | |
-| 4    | Feb 6 <br> Feb 8    | LQR as a QP & Riccati Equation <br> Dynamic Programming & Intro to Convexity |  <br> HW 1 Due, HW 2 Out |
-| 5    | Feb 13 <br> Feb 15  | Convex Model-Predictive Control <br> Intro to Trajectory Optimization, Iterative LQR, & DDP | |
-| 6    | Feb 20 <br> Feb 22  | DDP with Constraints and Free Final Time <br> Direct Trajectory Optimization, Collocation, & SQP | HW2 Due <br> HW3 Out |
-| 7    | Feb 27 <br> Feb 29  | Attitude Intro: SO(3) & Quaternions <br> Optimizing with Attitude | |
-| 8    | Mar 5 <br> Mar 7    | <span style="color:red">No Class</span> <br> <span style="color:red">No Class</span> | |
-| 9    | Mar 12 <br> Mar 14  | LQR with Attitude, Quadrotors, & Contact Intro <br> Trajectory Optimization for Hybrid Systems | HW3 Due <br> HW4 Out |
-| 10   | Mar 19 <br> Mar 21  | Data-Driven Methods & Iterative Learning Control <br> Stochastic Optimal Control & LQG | |
-| 11   | Mar 26 <br> Mar 28  | Robust Control & Minimax DDP <br> RL from an Optimal Control Perspective | HW4 Due | 
-| 12   | Apr 2 <br> Apr 4    | Practical Tips & Tricks, Control History <br> Case Study: How to Land a Rocket | |
-| 13   | Apr 9 <br> Apr 11   | Case Study: How to Drive a Car <br> <span style="color:red">No Class</span> | |
-| 14   | Apr 16 <br> Apr 18  | Case Study: How to Walk <br> TBD | |
-| 15   | Apr 23 <br> Apr 25  | Project Presentations <br> Project Presentations | |
- -->
+| 1    | Jan 14 <br> Jan 16 | Course Overview, & Dynamics Intro <br> Stability, Discrete-Time Dynamics | Survey <br> HW0 Out |
+| 2    | Jan 21 <br> Jan 23 | Optimization Intro <br> Numerical Optimization Pt. 1 | HW0 Due <br> HW1 Out |
+| 3    | Jan 28 <br> Jan 30  | Numerical Optimization Pt. 2 & Optimal Control Intro <br> Pontryagin, Shooting Methods, & LQR Intro | |
+| 4    | Feb 4 <br> Feb 6    | LQR as a QP & Riccati Equation <br> Dynamic Programming & Intro to Convexity |  <br> HW 1 Due, HW 2 Out |
+| 5    | Feb 11 <br> Feb 13  | Convex Model-Predictive Control <br> Intro to Trajectory Optimization, Iterative LQR, & DDP | |
+| 6    | Feb 18 <br> Feb 20  | DDP with Constraints and Free Final Time <br> Direct Trajectory Optimization, Collocation, & SQP | HW2 Due <br> HW3 Out |
+| 7    | Feb 25 <br> Feb 27  | Attitude Intro: SO(3) & Quaternions <br> Optimizing with Attitude | |
+| 8    | Mar 3 <br> Mar 5    | <span style="color:red">No Class</span> <br> <span style="color:red">No Class</span> | |
+| 9    | Mar 11 <br> Mar 13  | LQR with Attitude, Quadrotors, & Contact Intro <br> Trajectory Optimization for Hybrid Systems | HW3 Due <br> HW4 Out |
+| 10   | Mar 18 <br> Mar 20  | Data-Driven Methods & Iterative Learning Control <br> Stochastic Optimal Control & LQG | |
+| 11   | Mar 25 <br> Mar 27  | Robust Control & Minimax DDP <br> RL from an Optimal Control Perspective | HW4 Due | 
+| 12   | Apr 1 <br> Apr 3    | Practical Tips & Tricks, Control History <br> Case Study: How to Land a Rocket | |
+| 13   | Apr 8 <br> Apr 10   | Case Study: How to Drive a Car <br> <span style="color:red">No Class</span> | |
+| 14   | Apr 15 <br> Apr 17  | Case Study: How to Walk <br> TBD | |
+| 15   | Apr 22 <br> Apr 24  | Project Presentations <br> Project Presentations | |
+
 
 <!-- | Week | Dates | Topics | Assignments |
 |-------|---------|------------------|---------|

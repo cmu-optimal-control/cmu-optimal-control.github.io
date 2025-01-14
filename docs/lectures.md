@@ -1,6 +1,6 @@
 # 2025
 
-Lectures will be streamed live on Zoom, with the link from [Canvas](https://canvas.cmu.edu/courses/39938). After the lecture, the recording and all related materials will be made available here.
+Lectures will be streamed live on Zoom, through the link available from [Piazza](https://piazza.com/cmu/spring2025/16745/home) and [Canvas (TBD)](). After the lecture, the recording and all related materials will be made available here.
 
 # 2024
 
