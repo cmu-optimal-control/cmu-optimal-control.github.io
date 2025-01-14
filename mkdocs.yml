@@ -1,14 +1,14 @@
 site_name: CMU Optimal Control 16-745
 nav:
   - Home: index.md
+  - Course Calendar: course_calendar.md
   - Background: background.md
   - Lectures: lectures.md
-  - Course Notes: 
-    - Home: course_notes/notes_home.md
-    - Dynamics: # include lecture title in each md
-      - course_notes/dynamics/lec1.md 
+  # - Course Notes: 
+  #   - Home: course_notes/notes_home.md
+  #   - Dynamics: # include lecture title in each md
+  #     - course_notes/dynamics/lec1.md 
   - Recitations: recitations.md
-  - Office Hours: office_hours.md
   - Homeworks: homeworks.md
   - Quizzes: quizzes.md
   - Piazza: piazza.md

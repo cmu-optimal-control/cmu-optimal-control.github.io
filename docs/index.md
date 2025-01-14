@@ -1,12 +1,8 @@
 
-# 16-745: Optimal Control & Reinforcement Learning
+# Welcome to 16-745: Optimal Control and Reinforcement Learning at Carnegie Mellon University!
 
-[Piazza](https://piazza.com/cmu/spring2024/16745/home){ .md-button } [Canvas](https://canvas.cmu.edu/courses/39938
+[Piazza](https://piazza.com/cmu/spring2025/16745/home){ .md-button } [Canvas](https://canvas.cmu.edu/courses/39938
 ){ .md-button } [Gradescope](https://www.gradescope.com/courses/711335){ .md-button } [Github](https://github.com/Optimal-Control-16-745){ .md-button } [YouTube](https://www.youtube.com/@roboticexplorationlab3724/videos){ .md-button }
-
-
-Welcome to 16-745 Optimal Control and Reinforcement Learning at Carnegie Mellon University!
-
 
 ## Course Description
 
@@ -29,20 +25,6 @@ This is a course about how to make robots move through and interact with their e
     </div>
 </div>
 
-
-<div style="display: flex; align-items: center;">
-    <!-- Left side: Image -->
-    <img src="/images/headshots/kevin.png" alt="Person's Image" style="max-width: 100px; margin-right: 20px;">
-
-    <!-- Right side: Bio -->
-    <div style="margin-top: -30px;"> 
-        <h2>Kevin Tracy</h2>
-        <p style="margin-top: -10px;"> 
-            Head Teaching Assistant <br> <a href = "mailto: ktracy@cmu.edu">ktracy@cmu.edu</a>
-        </p>
-    </div>
-</div>
-
 <div style="display: flex; align-items: center;">
     <!-- Left side: Image -->
     <img src="/images/headshots/jj.png" alt="Person's Image" style="max-width: 100px; margin-right: 20px;">
@@ -52,19 +34,6 @@ This is a course about how to make robots move through and interact with their e
         <h2>JJ Lee</h2>
         <p style="margin-top: -10px;"> 
             Teaching Assistant <br> <a href = "mailto: jeonghunlee@cmu.edu">jeonghunlee@cmu.edu</a>
-        </p>
-    </div>
-</div>
-
-<div style="display: flex; align-items: center;">
-    <!-- Left side: Image -->
-    <img src="/images/headshots/fausto.png" alt="Person's Image" style="max-width: 100px; margin-right: 20px;">
-
-    <!-- Right side: Bio -->
-    <div style="margin-top: -30px;"> 
-        <h2>Fausto Vega</h2>
-        <p style="margin-top: -10px;"> 
-            Teaching Assistant <br> <a href = "mailto: fvega@andrew.cmu.edu">fvega@andrew.cmu.edu</a>
         </p>
     </div>
 </div>
@@ -84,24 +53,50 @@ This is a course about how to make robots move through and interact with their e
 
 <div style="display: flex; align-items: center;">
     <!-- Left side: Image -->
-    <img src="/images/headshots/sam.png" alt="Person's Image" style="max-width: 100px; margin-right: 20px;">
+    <img src="/images/headshots/fausto.png" alt="Person's Image" style="max-width: 100px; margin-right: 20px;">
 
     <!-- Right side: Bio -->
     <div style="margin-top: -30px;"> 
-        <h2>Sam Schoedel</h2>
+        <h2>Fausto Vega</h2>
         <p style="margin-top: -10px;"> 
-            Teaching Assistant <br> <a href = "mailto: sschoede@andrew.cmu.edu">sschoede@andrew.cmu.edu</a>
+            Teaching Assistant <br> <a href = "mailto: fvega@andrew.cmu.edu">fvega@andrew.cmu.edu</a>
+        </p>
+    </div>
+</div>
+
+<div style="display: flex; align-items: center;">
+    <!-- Left side: Image -->
+    <img src="/images/headshots/john.png" alt="Person's Image" style="max-width: 100px; margin-right: 20px;">
+
+    <!-- Right side: Bio -->
+    <div style="margin-top: -30px;"> 
+        <h2>John Zhang</h2>
+        <p style="margin-top: -10px;"> 
+            Teaching Assistant <br> <a href = "mailto: johnzhang@cmu.edu">johnzhang@cmu.edu</a>
+        </p>
+    </div>
+</div>
+
+<div style="display: flex; align-items: center;">
+    <!-- Left side: Image -->
+    <img src="/images/headshots/ashley.png" alt="Person's Image" style="max-width: 100px; margin-right: 20px;">
+
+    <!-- Right side: Bio -->
+    <div style="margin-top: -30px;"> 
+        <h2>Ashley Kline</h2>
+        <p style="margin-top: -10px;"> 
+            Teaching Assistant <br> <a href = "mailto: ankline@cmu.edu">ankline@cmu.edu</a>
         </p>
     </div>
 </div>
 
 ## Logistics 
 
-- Lectures will be held Tuesdays and Thursdays 5:00-6:20 PM Eastern time in TEP 1403. Lectures will also be live streamed on zoom and recorded for later viewing. **The Zoom link for lectures is available on [Canvas](https://canvas.cmu.edu/courses/39938).**
-- Recitation will be held Fridays 11:00-12:00 PM on zoom
-- Office hours are [here](office_hours.md) 
-- Homework assignments will be due by 11:59 PM Eastern time, two weeks after they are assigned.
-- Quizzes are released every Friday, due the following Tuesday at 11:59 PM Eastern time.
+- Lectures will be held Tuesdays and Thursdays 12:30-1:50 PM EST in GHC 4401. Lectures will also be live streamed on zoom and recorded for later viewing. **The Zoom link for lectures is available on [Canvas](https://canvas.cmu.edu/courses/39938).**
+<!-- - Recitation will be held Fridays 11:00-12:00 PM on zoom -->
+- Office hours, lecture schedule, and deadlines can be found on the **course calendar [here](course_calendar.md)**
+- Homework assignments will be due on **Thursdays 11:59 PM EST**, two weeks after they are assigned.
+- Quizzes are released every Friday, due the following **Tuesday at 11:59 PM EST**.
 - GitHub will be used to distribute assignments and GradeScope will be used for submissions.
 - Piazza will be used for general discussion and Q&A outside of class and office hours.
 - There will be no exams. Instead, students will form groups of up to five to complete a project on a topic of their choice.
@@ -132,7 +127,8 @@ Grading will be based on:
 |------|-------|
 |50% | Project |
 |40% | Homework |
-|10% | Quizzes/participation |
+|5%  | Quizzes |
+|5%  | Participation |
 
 Attendance during lectures is not required to earn a full participation grade. Students can also participate through any combination of office hours, Piazza discussions, project presentations, and by offering constructive feedback about the course to the instructors.
 
@@ -178,7 +174,7 @@ If you or anyone you know experiences any academic stress, difficult life events
 If you have questions about this or your coursework, please let me know. Thank you, and have a great semester.
 
 
-## Schedule
+<!-- ## Schedule
 
 | Week | Dates | Topics | Assignments |
 |------|-------|--------|-------------|
@@ -197,7 +193,7 @@ If you have questions about this or your coursework, please let me know. Thank y
 | 13   | Apr 9 <br> Apr 11   | Case Study: How to Drive a Car <br> <span style="color:red">No Class</span> | |
 | 14   | Apr 16 <br> Apr 18  | Case Study: How to Walk <br> TBD | |
 | 15   | Apr 23 <br> Apr 25  | Project Presentations <br> Project Presentations | |
-
+ -->
 
 <!-- | Week | Dates | Topics | Assignments |
 |-------|---------|------------------|---------|

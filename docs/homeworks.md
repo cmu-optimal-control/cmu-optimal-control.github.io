@@ -21,11 +21,11 @@
 
 | Homework     | Materials | Due Date|
 | ----------- | -----------         | | 
-| 0 | [assignment](https://github.com/Optimal-Control-16-745/HW0_S24) | 1/25 |
+<!-- | 0 | [assignment](https://github.com/Optimal-Control-16-745/HW0_S24) | 1/25 |
 | 1 | [assignment](https://github.com/Optimal-Control-16-745/HW1_S24), [solutions](https://github.com/Optimal-Control-16-745/HW1_S24_solutions) | 2/8 |
 | 2 | [assignment](https://github.com/Optimal-Control-16-745/HW2_S24), [solutions](https://github.com/Optimal-Control-16-745/HW2_S24_solutions) | 2/22 |
 | 3 | [assignment](https://github.com/Optimal-Control-16-745/HW3_S24), [solutions](https://github.com/Optimal-Control-16-745/HW3_S24_solutions) | 3/21 |
 | 4 | [assignment](https://github.com/Optimal-Control-16-745/HW4_S24), [solutions](https://github.com/Optimal-Control-16-745/HW4_S24_solutions) | 4/4 |
 
 
-
+ -->

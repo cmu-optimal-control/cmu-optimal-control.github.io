@@ -1,6 +1,8 @@
-# 2024
+# 2025
 
-Lectures will be streamed live on Zoom, with the link from [Canvas](https://canvas.cmu.edu/courses/39938). After the lecture, the recording and all related materials will be made avaiable here.
+Lectures will be streamed live on Zoom, with the link from [Canvas](https://canvas.cmu.edu/courses/39938). After the lecture, the recording and all related materials will be made available here.
+
+# 2024
 
 | Lecture     | Topics| Materials |
 | ----------- | -----------         | | 
@@ -67,6 +69,6 @@ Lectures will be streamed live on Zoom, with the link from [Canvas](https://canv
 
 ## Useful Links
 
-[**Youtube recitation playlist**](https://www.youtube.com/watch?v=6rUdAOCNXAU&list=PLZnJoM76RM6KugDT9sw5zhAmqKnGeoLRa)
+[**2024 recitation Youtube playlist**](https://www.youtube.com/watch?v=6rUdAOCNXAU&list=PLZnJoM76RM6KugDT9sw5zhAmqKnGeoLRa)
 
-[**Github Repo**](https://github.com/Optimal-Control-16-745/lecture-notebooks-2023)
+[**Github Repo**](https://github.com/Optimal-Control-16-745/lecture-notebooks-2024)

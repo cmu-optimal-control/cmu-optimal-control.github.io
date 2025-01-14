@@ -1,5 +1,9 @@
+## 2025
+
+There will be no official recitations for 2025. Please feel free to refer to previous years' for additional material.
+
 ## 2024
-### Recitations
+
 | Recitation #     | Topics|     Materials  |
 | ----------- | ----------- |---           | 
 | 1     |  Linear Systems, Taylor Series  |[video](https://youtu.be/97JZi5ztc3c?si=YyChhlIZy_MdUp89), [slides](https://github.com/Optimal-Control-16-745/recitations-2024/blob/main/1_19/1-19-recitation.pdf) |
@@ -19,9 +23,7 @@
 
 [**Github Repo**](https://github.com/Optimal-Control-16-745/recitations-2024)
 
-## 2023 (last year)
-
-### Recitations
+## 2023
 
 | Recitation #     | Topics|     Materials  |
 | ----------- | ----------- |---           | 
