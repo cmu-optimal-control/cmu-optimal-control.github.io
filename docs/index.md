@@ -1,7 +1,7 @@
 
 # Welcome to 16-745: Optimal Control and Reinforcement Learning at Carnegie Mellon University!
 
-[Piazza](https://piazza.com/cmu/spring2025/16745/home){ .md-button } [Canvas (TBD)](){ .md-button } [Gradescope](https://www.gradescope.com/courses/952874){ .md-button } [Github](https://github.com/Optimal-Control-16-745){ .md-button } [YouTube](https://www.youtube.com/@roboticexplorationlab3724/videos){ .md-button }
+[Piazza](https://piazza.com/cmu/spring2025/16745/home){ .md-button } [Canvas](https://canvas.cmu.edu/courses/46532){ .md-button } [Gradescope](https://www.gradescope.com/courses/952874){ .md-button } [Github](https://github.com/Optimal-Control-16-745){ .md-button } [YouTube](https://www.youtube.com/playlist?list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI){ .md-button }
 
 ## Course Description
 
@@ -91,7 +91,7 @@ This is a course about how to make robots move through and interact with their e
 
 ## Logistics 
 
-- Lectures will be held Tuesdays and Thursdays 12:30-1:50 PM EST in GHC 4401. Lectures will also be live streamed on zoom and recorded for later viewing. **The Zoom links for lectures and office hours are available on [Piazza](https://piazza.com/cmu/spring2025/16745/home) and [Canvas (TBD)]().**
+- Lectures will be held Tuesdays and Thursdays 12:30-1:50 PM EST in GHC 4401. Lectures will also be live streamed on zoom and recorded for later viewing. **The Zoom links for lectures and office hours are available on [Piazza](https://piazza.com/cmu/spring2025/16745/home) and [Canvas](https://canvas.cmu.edu/courses/46532).**
 <!-- - Recitation will be held Fridays 11:00-12:00 PM on zoom -->
 - Office hours, lecture schedule, and deadlines can be found on the **course calendar [here](course_calendar.md)**
 - Homework assignments will be due on **Thursdays 11:59 PM EST**, two weeks after they are assigned.
