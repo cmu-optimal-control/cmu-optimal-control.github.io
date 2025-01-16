@@ -2,6 +2,10 @@
 
 Lectures will be streamed live on Zoom, through the link available from [Piazza](https://piazza.com/cmu/spring2025/16745/home) and [Canvas](https://canvas.cmu.edu/courses/46532). After the lecture, the recording and all related materials will be made available here.
 
+| Lecture     | Topics| Materials |
+| ----------- | -----------         | | 
+| 1     | Introduction and Dynamics      |[video](https://www.youtube.com/watch?v=SvAYJC7jug8&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%201) |
+
 # 2024
 
 | Lecture     | Topics| Materials |
