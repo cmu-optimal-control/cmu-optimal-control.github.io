@@ -4,7 +4,7 @@
 
 | Homework                                                              | Solutions | Topics                                                | Due Date                  |
 | -----------                                                           | --------- | ------                                                | --------                  |
-| [Assignment 1](https://github.com/Optimal-Control-16-745/HW0_S25)     | TBA       | Julia Warm Up, Differentiation, Newton's Method       | 01/23/2025, 11:59 PM EST  |
+| [Assignment 0](https://github.com/Optimal-Control-16-745/HW0_S25)     | TBA       | Julia Warm Up, Differentiation, Newton's Method       | 01/23/2025, 11:59 PM EST  |
 
 ## Submission Instructions
 
