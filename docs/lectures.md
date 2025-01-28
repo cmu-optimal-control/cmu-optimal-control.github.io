@@ -5,6 +5,10 @@ Lectures will be streamed live on Zoom, through the link available from [Piazza]
 | Lecture     | Topics| Materials |
 | ----------- | -----------         | | 
 | 1     | Introduction and Dynamics      |[video](https://www.youtube.com/watch?v=SvAYJC7jug8&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%201) |
+| 2     | Dynamics Discretization & Stability      |[video](https://www.youtube.com/watch?v=_Swoo8n7DFM&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=2), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%202) |
+|**Optimization**|
+| 3     | Optimization Pt. 1      |[video](https://www.youtube.com/watch?v=f7yF0KOV-sI&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=3), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%203) |
+| 4     | Optimization Pt. 2      |[video](https://www.youtube.com/watch?v=lIuPIlDxLNU&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=4), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%204) |
 
 # 2024
 
