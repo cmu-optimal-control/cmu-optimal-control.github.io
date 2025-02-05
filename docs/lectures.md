@@ -9,6 +9,10 @@ Lectures will be streamed live on Zoom, through the link available from [Piazza]
 |**Optimization**|
 | 3     | Optimization Pt. 1      |[video](https://www.youtube.com/watch?v=f7yF0KOV-sI&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=3), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%203) |
 | 4     | Optimization Pt. 2      |[video](https://www.youtube.com/watch?v=lIuPIlDxLNU&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=4), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%204) |
+| 5     | Optimization Pt. 3      |[video](https://www.youtube.com/watch?v=bsBXk17rff4&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=5), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%205) |
+| 6     | Regularization, Merit Functions, and Control History  |[video](https://www.youtube.com/watch?v=8N10U68kS5M&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=6), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%206) |
+|**Optimal Control**|
+| 7     | Deterministic Optimal Control and Pontryagin  |[video](https://www.youtube.com/watch?v=ZoLmQB6C7WU&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=7), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%207) |
 
 # 2024
 
