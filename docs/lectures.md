@@ -13,6 +13,7 @@ Lectures will be streamed live on Zoom, through the link available from [Piazza]
 | 6     | Regularization, Merit Functions, and Control History  |[video](https://www.youtube.com/watch?v=8N10U68kS5M&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=6), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%206) |
 |**Optimal Control**|
 | 7     | Deterministic Optimal Control and Pontryagin  |[video](https://www.youtube.com/watch?v=ZoLmQB6C7WU&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=7), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%207) |
+| 8     | LQR in 3 Ways  |[video](https://www.youtube.com/watch?v=9_je9YOKtew&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=8), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%208) |
 
 # 2024
 
