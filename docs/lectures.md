@@ -15,7 +15,9 @@ Lectures will be streamed live on Zoom, through the link available from [Piazza]
 | 7     | Deterministic Optimal Control and Pontryagin  |[video](https://www.youtube.com/watch?v=ZoLmQB6C7WU&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=7), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%207) |
 | 8     | LQR in 3 Ways  |[video](https://www.youtube.com/watch?v=9_je9YOKtew&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=8), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%208) |
 | 9     | Controllability & Dynamic Programming  |[video](https://www.youtube.com/watch?v=RtGsW12LRjk&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=9), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%209) |
-| 10     | Convex MPC  |[video](https://www.youtube.com/watch?v=J7lh-uF3wlY&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=10), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%210) |
+| 10     | Convex MPC  |[video](https://www.youtube.com/watch?v=J7lh-uF3wlY&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=10), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2010) |
+| 11     | Nonlinear Trajectory Optimization  |[video](https://www.youtube.com/watch?v=ERGKQ2ieYW8&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=11), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2011) |
+| 12     | Differential Dynamic Programming  |[video](https://www.youtube.com/watch?v=JFiIZ8Iwj6Y&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=12), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2012) |
 
 # 2024
 
