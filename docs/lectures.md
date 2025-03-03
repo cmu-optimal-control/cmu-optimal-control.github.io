@@ -18,6 +18,7 @@ Lectures will be streamed live on Zoom, through the link available from [Piazza]
 | 10     | Convex MPC  |[video](https://www.youtube.com/watch?v=J7lh-uF3wlY&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=10), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2010) |
 | 11     | Nonlinear Trajectory Optimization  |[video](https://www.youtube.com/watch?v=ERGKQ2ieYW8&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=11), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2011) |
 | 12     | Differential Dynamic Programming  |[video](https://www.youtube.com/watch?v=JFiIZ8Iwj6Y&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=12), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2012) |
+| 13     | Direct Trajectory Optimization  |[video](https://www.youtube.com/watch?v=8VZ0MZ_JpgE&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=13), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2013) |
 
 # 2024
 
