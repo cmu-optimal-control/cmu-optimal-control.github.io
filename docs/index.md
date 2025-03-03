@@ -179,7 +179,25 @@ This is subject to change. HW deadlines will be updated as the semester progress
 
 | Week | Dates | Topics | Assignments |
 |------|-------|--------|-------------|
+
+
 | 1    | Jan 14 <br> Jan 16 | Course Overview, & Dynamics Intro <br> Stability, Discrete-Time Dynamics | Survey <br> HW0 Out |
+| 2    | Jan 21 <br> Jan 23 | Optimization Intro <br> Numerical Optimization Pt. 1 | Quiz 1 Due <br> HW0 Due, HW1 Out |
+| 3    | Jan 28 <br> Jan 30  | Numerical Optimization Pt. 2 & Optimal Control Intro <br> Regularization & Merit Functions | Quiz 2 Due <br> |
+| 4    | Feb 4 <br> Feb 6    | Pontryagin & Shooting Methods <br> LQR in 3 Ways | Quiz 3 Due <br> HW1 Due, HW2 Out |
+| 5    | Feb 11 <br> Feb 13  | Dynamic Programming & Intro to Convexity <br> Convex Model-Predictive Control | Quiz 4 Due <br> |
+| 6    | Feb 18 <br> Feb 20  | Intro to Nonlinear Trajectory Optimization <br> DDP & iLQR | HW2 Due, HW3 Out |
+| 7    | Feb 25 <br> Feb 27  | <span style="color:red">No Class</span> <br> Direct Trajectory Optimization, Collocation, & SQP | Quiz 5 Due <br> HW2 Due, HW3 Out |
+| 8    | Mar 3 <br> Mar 5    | <span style="color:red">No Class</span> <br> <span style="color:red">No Class</span> | |
+| 9    | Mar 11 <br> Mar 13  | Attitude Intro: SO(3) & Quaternions <br> Optimizing with Attitude | Quiz 7 Due <br> |
+| 10   | Mar 18 <br> Mar 20  | LQR with Attitude, Quadrotors, & Contact Intro <br> Trajectory Optimization for Hybrid Systems | Quiz 8 Due <br> HW3 Due, HW4 Out |
+| 11   | Mar 25 <br> Mar 27  | Data-Driven Methods & Iterative Learning Control <br> Stochastic Optimal Control & LQG | Quiz 9 Due <br> | 
+| 12   | Apr 1 <br> Apr 3    | Robust Control & Minimax DDP <br> Practical Tips & Tricks, RL from an Optimal Control Perspective | Quiz 10 Due <br> HW4 Due |
+| 13   | Apr 8 <br> Apr 10   | Case Study: How to Drive a Car <br> <br> <span style="color:red">No Class</span> | |
+| 14   | Apr 15 <br> Apr 17  | Case Study: How to Land a Rocket <br> Case Study: How to Walk | |
+| 15   | Apr 22 <br> Apr 24  | Project Presentations <br> Project Presentations | | -->
+
+<!-- | 1    | Jan 14 <br> Jan 16 | Course Overview, & Dynamics Intro <br> Stability, Discrete-Time Dynamics | Survey <br> HW0 Out |
 | 2    | Jan 21 <br> Jan 23 | Optimization Intro <br> Numerical Optimization Pt. 1 | Quiz 1 Due <br> HW0 Due, HW1 Out |
 | 3    | Jan 28 <br> Jan 30  | Numerical Optimization Pt. 2 & Optimal Control Intro <br> Pontryagin, Shooting Methods, & LQR Intro | Quiz 2 Due <br> |
 | 4    | Feb 4 <br> Feb 6    | LQR as a QP & Riccati Equation <br> Dynamic Programming & Intro to Convexity | Quiz 3 Due <br> HW1 Due, HW2 Out |
@@ -193,13 +211,7 @@ This is subject to change. HW deadlines will be updated as the semester progress
 | 12   | Apr 1 <br> Apr 3    | Practical Tips & Tricks, Control History <br> Case Study: How to Land a Rocket | Quiz 10 Due <br> HW4 Due |
 | 13   | Apr 8 <br> Apr 10   | Case Study: How to Drive a Car <br> <span style="color:red">No Class</span> | |
 | 14   | Apr 15 <br> Apr 17  | Case Study: How to Walk <br> TBD | |
-| 15   | Apr 22 <br> Apr 24  | Project Presentations <br> Project Presentations | |
-
-
-<!-- | Week | Dates | Topics | Assignments |
-|-------|---------|------------------|---------|
-| 1 | Jan 16 <br> Jan 18 | Course Overview, & Dynamics Intro <br> Stability, Discrete-Time Dynamics | Survey <br> HW0 Out |
-| 2 | Jan 23 <br> Jan 25 | Optimization Intro <br> Numerical Optimization Pt. 1 | HW0 Due <br> HW1 Out | -->
+| 15   | Apr 22 <br> Apr 24  | Project Presentations <br> Project Presentations | | -->
 
 <!-- \begin{center}
 \begin{tabular}{l l}
