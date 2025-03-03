@@ -179,15 +179,13 @@ This is subject to change. HW deadlines will be updated as the semester progress
 
 | Week | Dates | Topics | Assignments |
 |------|-------|--------|-------------|
-
-
 | 1    | Jan 14 <br> Jan 16 | Course Overview, & Dynamics Intro <br> Stability, Discrete-Time Dynamics | Survey <br> HW0 Out |
 | 2    | Jan 21 <br> Jan 23 | Optimization Intro <br> Numerical Optimization Pt. 1 | Quiz 1 Due <br> HW0 Due, HW1 Out |
 | 3    | Jan 28 <br> Jan 30  | Numerical Optimization Pt. 2 & Optimal Control Intro <br> Regularization & Merit Functions | Quiz 2 Due <br> |
 | 4    | Feb 4 <br> Feb 6    | Pontryagin & Shooting Methods <br> LQR in 3 Ways | Quiz 3 Due <br> HW1 Due, HW2 Out |
 | 5    | Feb 11 <br> Feb 13  | Dynamic Programming & Intro to Convexity <br> Convex Model-Predictive Control | Quiz 4 Due <br> |
-| 6    | Feb 18 <br> Feb 20  | Intro to Nonlinear Trajectory Optimization <br> DDP & iLQR | HW2 Due, HW3 Out |
-| 7    | Feb 25 <br> Feb 27  | <span style="color:red">No Class</span> <br> Direct Trajectory Optimization, Collocation, & SQP | Quiz 5 Due <br> HW2 Due, HW3 Out |
+| 6    | Feb 18 <br> Feb 20  | Intro to Nonlinear Trajectory Optimization <br> Differential Dynamic Programming & iLQR | Quiz 5 Due <br> HW2 Due, HW3 Out |
+| 7    | Feb 25 <br> Feb 27  | <span style="color:red">No Class</span> <br> Direct Trajectory Optimization, Collocation, & SQP | Quiz 6 Due <br> |
 | 8    | Mar 3 <br> Mar 5    | <span style="color:red">No Class</span> <br> <span style="color:red">No Class</span> | |
 | 9    | Mar 11 <br> Mar 13  | Attitude Intro: SO(3) & Quaternions <br> Optimizing with Attitude | Quiz 7 Due <br> |
 | 10   | Mar 18 <br> Mar 20  | LQR with Attitude, Quadrotors, & Contact Intro <br> Trajectory Optimization for Hybrid Systems | Quiz 8 Due <br> HW3 Due, HW4 Out |
