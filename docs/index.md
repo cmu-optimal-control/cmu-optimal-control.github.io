@@ -190,8 +190,8 @@ This is subject to change. HW deadlines will be updated as the semester progress
 | 9    | Mar 11 <br> Mar 13  | Attitude Intro: SO(3) & Quaternions <br> Optimizing with Attitude | Quiz 7 Due <br> |
 | 10   | Mar 18 <br> Mar 20  | LQR with Attitude, Quadrotors, & Contact Intro <br> Trajectory Optimization for Hybrid Systems | Quiz 8 Due <br> HW3 Due, HW4 Out |
 | 11   | Mar 25 <br> Mar 27  | Data-Driven Methods & Iterative Learning Control <br> Stochastic Optimal Control & LQG | Quiz 9 Due <br> | 
-| 12   | Apr 1 <br> Apr 3    | Robust Control & Minimax DDP <br> Practical Tips & Tricks, RL from an Optimal Control Perspective | Quiz 10 Due <br> HW4 Due |
-| 13   | Apr 8 <br> Apr 10   | Case Study: How to Drive a Car <br> <br> <span style="color:red">No Class</span> | |
+| 12   | Apr 1 <br> Apr 3    | Robust Control & Minimax DDP <br> Practical Tips & Tricks, RL from an Optimal Control Perspective | Quiz 10 Due <br> |
+| 13   | Apr 8 <br> Apr 10   | Case Study: How to Drive a Car <br> <br> <span style="color:red">No Class</span> | HW4 Due <br> |
 | 14   | Apr 15 <br> Apr 17  | Case Study: How to Land a Rocket <br> Case Study: How to Walk | |
 | 15   | Apr 22 <br> Apr 24  | Project Presentations <br> Project Presentations | | -->
 
