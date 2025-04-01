@@ -19,6 +19,14 @@ Lectures will be streamed live on Zoom, through the link available from [Piazza]
 | 11     | Nonlinear Trajectory Optimization  |[video](https://www.youtube.com/watch?v=ERGKQ2ieYW8&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=11), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2011) |
 | 12     | Differential Dynamic Programming  |[video](https://www.youtube.com/watch?v=JFiIZ8Iwj6Y&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=12), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2012) |
 | 13     | Direct Trajectory Optimization  |[video](https://www.youtube.com/watch?v=8VZ0MZ_JpgE&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=13), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2013) |
+|**Rotations**|
+| 14     | Intro to 3D Rotations  |[video](https://www.youtube.com/watch?v=x5DJ8yh-674&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=14), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2014) |
+| 15     | Optimizing Rotations  |[video](https://www.youtube.com/watch?v=bR6xadliH-c&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=15), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2015) |
+| 16     | LQR with Quaternions and Quadrotors  |[video](https://www.youtube.com/watch?v=1sKMUrS4Mvk&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=16), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2016) |
+|**Special Topics**|
+| 17     | Hybrid Systems and Legged Robots  |[video](https://www.youtube.com/watch?v=QLyXkH4Jx1I&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=17), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2017) |
+| 18     | Iterative Learning Control  |[video](https://www.youtube.com/watch?v=vbW5G5GydDU&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=18), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2018) |
+| 19     | Stochastic Optimal Control and LQG  |[video](https://www.youtube.com/watch?v=FDZcYgEz5Qo&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=19), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2019) |
 
 # 2024
 
