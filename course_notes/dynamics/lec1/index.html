@@ -1,0 +1,899 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>1. Continuous-Time Dynamics & Equilibria - CMU Optimal Control 16-745</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-continuous-time-dynamics-equilibria" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="CMU Optimal Control 16-745" class="md-header__button md-logo" aria-label="CMU Optimal Control 16-745" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2S7 4 7 12c0 3.1.76 5.75 1.67 7.83A2 2 0 0 0 10.5 21h3a2 2 0 0 0 1.83-1.17C16.25 17.75 17 15.1 17 12c0-8-5-10-5-10m1.5 17h-3c-1-2.24-1.5-4.59-1.5-7 0-4.64 1.9-6.8 3-7.67 1.1.87 3 3.03 3 7.67 0 2.41-.5 4.76-1.5 7m6.5 3-3.86-1.55c.7-1.53 1.2-3.11 1.51-4.72m-9.79 4.72L4 22l2.35-6.27c.31 1.61.81 3.19 1.51 4.72M12 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CMU Optimal Control 16-745
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Continuous-Time Dynamics &amp; Equilibria
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Optimal-Control-16-745" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../course_calendar/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Course Calendar
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../background/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Background
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../lectures/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lectures
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../recitations/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Recitations
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../homeworks/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Homeworks
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../quizzes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quizzes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../piazza/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Piazza
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CMU Optimal Control 16-745" class="md-nav__button md-logo" aria-label="CMU Optimal Control 16-745" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2S7 4 7 12c0 3.1.76 5.75 1.67 7.83A2 2 0 0 0 10.5 21h3a2 2 0 0 0 1.83-1.17C16.25 17.75 17 15.1 17 12c0-8-5-10-5-10m1.5 17h-3c-1-2.24-1.5-4.59-1.5-7 0-4.64 1.9-6.8 3-7.67 1.1.87 3 3.03 3 7.67 0 2.41-.5 4.76-1.5 7m6.5 3-3.86-1.55c.7-1.53 1.2-3.11 1.51-4.72m-9.79 4.72L4 22l2.35-6.27c.31 1.61.81 3.19 1.51 4.72M12 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2"/></svg>
+
+    </a>
+    CMU Optimal Control 16-745
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Optimal-Control-16-745" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course_calendar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Calendar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../background/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Background
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lectures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recitations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../homeworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Homeworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quizzes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quizzes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../piazza/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Piazza
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="1-continuous-time-dynamics-equilibria">1. Continuous-Time Dynamics &amp; Equilibria</h1>
+<h2 id="topics-covered">Topics Covered</h2>
+<ul>
+<li>Introduction</li>
+<li>Motivating Example (Pendulum)</li>
+<li>Continuous-Time Dynamics</li>
+<li>Equilibria</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>To start things off, we're going to go through some background material. Specifically, we're first going to provide a crash course on dynamics, which defines the behavior of many robotics systems that we will later attempt to "control" to do what we want. Before we do "optimal control," we need to understand what we're going to control and what it means to control a robot.</p>
+<p><strong>Disclaimer:</strong> This course will have an emphasis on <strong>robotics applications, specifically mechanical systems,</strong> but many of the methods are applicable to other types of systems such as chemical processes, which is where optimal control actually originated from.</p>
+<p>We'll begin with a high-level overview of <strong>continuous-time dynamics, equilibria, and stability</strong> to provide a background to those unfamiliar with topics like dynamics and differential equations. This will provide a <em>basic</em> foundation to describe how robotic systems move and interact with their environment. In later lectures, we will learn how to <em>discretize</em> them to make them useful for computers (e.g., our future controllers).</p>
+<h2 id="motivating-example-pendulum">Motivating Example (Pendulum)</h2>
+<p>Let's start with a real-life example: a <strong>pendulum</strong>, the world's simplest nonlinear dynamical system (or robot),</p>
+<p><img alt="image" src="../../../images/lectures/lecture_1/lecture_1_pendulum_setup.png" /></p>
+<p>where we have a point mass of mass <span class="arithmatex">\(m\)</span> subject to gravity, <span class="arithmatex">\(g\)</span>, while being suspended by a massless rod of length <span class="arithmatex">\(l\)</span> that can swing about a pivot point.</p>
+<p>If we want to describe the motion of the pendulum, we need to:</p>
+<ol>
+<li>Define scalar variables that <em>represent/parameterize</em> the system,</li>
+<li>Describe how those variables <em>evolve</em> to explain the system's behavior.</li>
+</ol>
+<p>In the case of the pendulum, we somehow want to parameterize its swinging motion. First, we need to way to characterize <em>where</em> the pendulum is during the swing; one way of doing so is keeping track of the pendulum's <strong>angle</strong>, <span class="arithmatex">\(\theta\)</span>, which gives us one variable. However, that's not enough - if we want to be able to know where the pendulum will be in the future (i.e., how it will evolve), we also need to know how <em>fast</em> its swinging. Therefore, let's also keep track of the pendulum's <strong>angular velocity</strong>, <span class="arithmatex">\(\dot{\theta}\)</span>. To be concise, we can stack our variables into a <em>vector</em> <span class="arithmatex">\(\in \mathbb{R}^{2}\)</span> (i.e., in 2D space of real numbers):</p>
+<div class="arithmatex">\[
+x = \begin{bmatrix}
+    \theta\\
+    \dot{\theta}
+\end{bmatrix}.
+\]</div>
+<p>Now, we can use those variables (along with physics) to describe how the pendulum swings in the form of a <strong>ODE (ordinary differential equation)</strong>:</p>
+<div class="arithmatex">\[
+ml^{2}\ddot{\theta} + mgl\sin(\theta) = \tau,
+\]</div>
+<p>where <span class="arithmatex">\(\tau \in \mathbb{R}\)</span> is the <strong>torque</strong> applied to the pendulum. Just like before with the variables, we can express this ODE in a vector form:</p>
+<div class="arithmatex">\[
+f(x, u) = \begin{bmatrix}
+    \dot{\theta}\\
+    \ddot{\theta}
+\end{bmatrix} = \begin{bmatrix}
+    \dot{\theta}\\
+    -\frac{g}{l}\sin(\theta) + \frac{1}{ml^{2}}u
+\end{bmatrix},
+\]</div>
+<p>where <span class="arithmatex">\(u = \tau\)</span>. To provide names to everything, we call <span class="arithmatex">\(x\)</span> the pendulum's <strong>state</strong> and <span class="arithmatex">\(f(x, u)\)</span> the pendulum's <strong>dynamics model</strong>. </p>
+<p>Now, let's say we want to make the pendulum "do something." Let's say we want to make it rotate counter-clockwise. Then we need to apply some sort of <em>input</em> to the system. In the pendulum's case, we can apply a torque (from an imaginary motor at the base) which we defined as <span class="arithmatex">\(u\)</span>. As hinted at earlier, we call <span class="arithmatex">\(u\)</span> our <strong>control input</strong>.</p>
+<h2 id="continuous-time-dynamics">Continuous-Time Dynamics</h2>
+<h3 id="general-form">General Form</h3>
+<p>While the pendulum is a nice, specific, real-life example, we need to be able to express things more generally to extend the same idea to other systems. The most general/generic way to write continuous-time dynamics for a <em>smooth sytem</em> is in the form,</p>
+<div class="arithmatex">\[
+\dot{x} = f(x, u).
+\]</div>
+<p>Just like we did for the pendulum, we call <span class="arithmatex">\(f\)</span> the <strong>dynamics</strong>, <span class="arithmatex">\(x \in \mathbb{R}^{n}\)</span> the <strong>state</strong> (assume a vector for now), and <span class="arithmatex">\(u \in \mathbb{R}^{m}\)</span> the <strong>input</strong>. From a robotics perspective, smooth means that it doesn't involve things like rigid contact that cause discontinuous/switching behaviors. We'll study this in greater detail in later lectures.</p>
+<p>Specifically for a mechanical system (most things in robotics), the state can be split into 2 pieces:</p>
+<div class="arithmatex">\[
+x = \begin{bmatrix}
+    q\\
+    v
+\end{bmatrix},
+\]</div>
+<p>where <span class="arithmatex">\(q\)</span> is called the <strong>configuration/pose</strong> and <span class="arithmatex">\(v\)</span> is the <strong>velocity</strong>. In the case of the pendulum, the configuration would be the angle, and the velocity would be the angular velocity:</p>
+<div class="arithmatex">\[
+\begin{align}
+    q &amp; = \theta, \\
+    v &amp; = \dot{\theta}.
+\end{align}
+\]</div>
+<p><strong>NOTE:</strong> <span class="arithmatex">\(q\)</span> is not always a vector. For example, in the case of the pendulum, we kind of lied... <span class="arithmatex">\(\theta\)</span> can only be between <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(2\pi\)</span>. Therefore, we say the <span class="arithmatex">\(q \in \mathbb{S}^{1}\)</span> (i.e., in a 1D circle). If <span class="arithmatex">\(\dot{\theta}\)</span> can be any real number, then what does <span class="arithmatex">\(x\)</span> look like? <strong>HINT:</strong> it's not <span class="arithmatex">\(\mathbb{R}^{2}\)</span>.</p>
+<h3 id="control-affine-systems">Control-Affine Systems</h3>
+<p>Often times, we see common structures across so many dynamical systems that we give them labels. One kind is called <strong>control-affine systems</strong>, which is in the form,</p>
+<div class="arithmatex">\[
+\dot{x} = f_{0}(x) + B(x)u,
+\]</div>
+<p>where <span class="arithmatex">\(f_{0}\)</span> is called the <strong>drift</strong> term, and <span class="arithmatex">\(B(x)\)</span> is known as the <strong>input Jacobian</strong>. This expression essentially just means that the dynamics is linear with respect to <span class="arithmatex">\(u\)</span>. It turns out most systems, including <em>all</em> mechanical systems, can be written in this form. In the case of the pendulum:</p>
+<div class="arithmatex">\[
+f_{0}(x) = \begin{bmatrix}
+    \dot{\theta}\\
+    -\frac{g}{l}\sin(\theta)
+\end{bmatrix},\quad B(x) = \begin{bmatrix}
+    0\\
+    \frac{1}{ml^{2}}
+\end{bmatrix}.
+\]</div>
+<h3 id="manipulator-dynamics">Manipulator Dynamics</h3>
+<p>If we get even more specific, we'll find another form that's very common in robotics. In fact, this specific form once again encompasses <em>all</em> mechanical systems. We call it the <strong>manipulator equation</strong>, which we write as</p>
+<div class="arithmatex">\[
+M(q)\dot{v} + C(q, v) = B(q)u + F,
+\]</div>
+<p>where <span class="arithmatex">\(M(q)\)</span> is called the <strong>mass matrix</strong>, <span class="arithmatex">\(C(q, v)\)</span> is the <strong>dynamic bias</strong>, <span class="arithmatex">\(B(q)\)</span> is again the <strong>input Jacobian</strong>, and <span class="arithmatex">\(F\)</span> represents all other <strong>external forces</strong>. As we noted before, <span class="arithmatex">\(q\)</span> is not always a vector, which implies that in a lot of cases, <span class="arithmatex">\(\dot{q} \neq v\)</span>. Therefore, we must generally say that</p>
+<div class="arithmatex">\[
+\dot{q} = G(q)v.
+\]</div>
+<p>We call this expression the <strong>velocity kinematics</strong>, and this will show up a lot in <em>3D rotations</em> (e.g., quaternions, rotation matrices, and if you're sadistic... Euler angles), which we'll study in later lectures. </p>
+<p>When applied to our pendulum example, the manipulator equation's terms are</p>
+<div class="arithmatex">\[
+M(q) = ml^{2}, \quad C(q, v) = mgl\sin(\theta), \quad B = I, \quad G=I.
+\]</div>
+<p>Practically speaking, a lot of existing robotics toolboxes/packages will provide these terms for you so that we don't have to do heinous, complicated physics to get them - hurray!</p>
+<p>Remember, we still need our dynamics model to describe <span class="arithmatex">\(\dot{x}\)</span> (how our states evolve). Massaging the manipulator equation to do so gives us</p>
+<div class="arithmatex">\[
+\dot{x} = f(x, u) = \begin{bmatrix}
+    G(q)v\\
+    M(q)^{-1}[B(q)u + F - C]
+\end{bmatrix}.
+\]</div>
+<p>One nice thing about this is that <span class="arithmatex">\(M(q)\)</span> is <em>always invertible</em> if we make good choices for the coordinates of <span class="arithmatex">\(x\)</span>. In addition, inverting <span class="arithmatex">\(M(q)\)</span> is the most expensive operation here, which limits the time-complexity of solving this equation to <span class="arithmatex">\(O(n^{3})\)</span>. This is good because we care about speed; our controller has to run in real-time when on an actual robot. Unfortunately, this can still be expensive for a big robot with a lot of links (e.g., humanoid), but there are smarter ways of dealing with this that can be <span class="arithmatex">\(O(n)\)</span>.</p>
+<p><strong>NOTE:</strong> Practically speaking, you should almost never solve for <span class="arithmatex">\(M(q)^{-1}\)</span> directly. As alluded to earlier, there are applicable, smart solvers/methods for solving linear systems (<span class="arithmatex">\(Ax=b\)</span>) that can achieve <span class="arithmatex">\(O(n)\)</span>.</p>
+<h3 id="linear-systems">Linear Systems</h3>
+<p>Linear systems are our most specific, but still widely-used form of modeling dynamical systems. In fact, it's hard to overstate just how <em>important</em> linear systems are in control theory; we can solve them exactly in closed-form, analyze their behaviors rigorously, and approximate many systems with linear models. In fact, they're so well-studied that there are whole classes/textbooks on them, but for our purposes, we'll provide a high-level overview here.</p>
+<p>As hinted by the name, linear systems have the form:</p>
+<div class="arithmatex">\[
+\dot{x} = A(t)x + B(t)u.
+\]</div>
+<p>If <span class="arithmatex">\(A(t)\)</span> and <span class="arithmatex">\(B(t)\)</span> are constant (i.e., <span class="arithmatex">\(A(t) = A\)</span>, <span class="arithmatex">\(B(t) = B\)</span>), then the system is called <strong>time invariant</strong>. The system is <strong>time varying</strong> otherwise.</p>
+<p>As previously mentioned, linear systems are <em>super important</em> in control, one of those reasons being that we often <em>approximate</em> nonlinear systems <em>locally</em> with linear ones using <strong>Taylor series</strong>:</p>
+<div class="arithmatex">\[
+\dot{x} = f(x, u) \quad \Rightarrow \quad A=\frac{\partial f}{\partial x}, \quad B = \frac{\partial f}{\partial u}.
+\]</div>
+<p>It turns out this works surprisingly well in controls; so well that we can often design bread-and-butter controllers with the <em>linearized</em> model and still run it successfully in <em>nonlinear</em> settings (e.g., the real world). This is usually a good first step!</p>
+<p><img alt="image" src="../../../images/lectures/lecture_1/lecture_1_be_wise_linearize.png" /></p>
+<h2 id="equilibria">Equilibria</h2>
+<h3 id="definition">Definition</h3>
+<p>Switching gears a little bit, let's now talk about another <em>super important</em> topic in dynamics, which is <strong>equilibria</strong>. Intuitively, this is a point where a system will "remain at rest." Algebraically, the equilibria, <span class="arithmatex">\(x_{eq}\)</span>, are the roots of our dynamics, where</p>
+<div class="arithmatex">\[
+\dot{x} = f(x, u) = 0.
+\]</div>
+<p>In the case of the pendulum, the equilibria are where our pendulum is pointing straight down and upright respectively; if we leave the pendulum at those spots, it shouldn't move. We can determine the points (i.e., the states) that correspond to the equilibria:</p>
+<div class="arithmatex">\[
+\dot{x} = \begin{bmatrix}
+    \dot{\theta}\\
+    -\frac{g}{l}\sin{\theta}
+\end{bmatrix} = \begin{bmatrix}
+    0 \\
+    0
+\end{bmatrix} \quad \Rightarrow \quad x_{eq} = \begin{bmatrix}
+    0 \\
+    0
+\end{bmatrix}, \begin{bmatrix}
+    \pi \\
+    0
+\end{bmatrix}.
+\]</div>
+<p><img alt="image" src="../../../images/lectures/lecture_1/lecture_1_pendulum_equilibria.png" /></p>
+<h3 id="first-control-problem">First Control Problem</h3>
+<p>Let's use this opportunity to solve our first control problem: what <span class="arithmatex">\(u\)</span> do we need to apply to move the equilibria to <span class="arithmatex">\(\theta = \frac{\pi}{2}\)</span>?</p>
+<p><img alt="image" src="../../../images/lectures/lecture_1/lecture_1_pendulum_right_angle.png" /></p>
+<p>Using the expression of equilibria for our pendulum, we can solve for <span class="arithmatex">\(u\)</span> accordingly:</p>
+<div class="arithmatex">\[
+\begin{align}
+    \dot{x} = \begin{bmatrix}
+        \dot{\theta}\\
+        -\frac{g}{l}\sin{\theta} + \frac{1}{ml^{2}}u
+    \end{bmatrix} &amp; = \begin{bmatrix}
+        0 \\
+        0
+    \end{bmatrix}, \\
+    \space \\
+    \Rightarrow \frac{1}{ml^{2}}u &amp; = \frac{g}{l}\sin{\theta}, \\
+    \space \\
+    \Rightarrow u &amp; = mgl.
+\end{align}
+\]</div>
+<p>Like this pendulum example, we <em>generally</em> get a root-finding problem in <span class="arithmatex">\(u\)</span>:</p>
+<div class="arithmatex">\[
+f(x^{*}, u) = 0
+\]</div>
+<h3 id="stability-of-equilibria">Stability of Equilibria</h3>
+<p>Not only do we care about <em>where</em> the equilibria are, but also how <strong>stable</strong> they are. This is absolutely another <em>core</em> concept in control, so we strongly suggest you pay attention. What we're generally asking with regard to <strong>stability</strong> is the following: <strong>"when will we stay stay 'near' an equilibrium point under perturbations?"</strong></p>
+<p>We'll demonstrate by example by looking at a made-up, stupid-looking 1D system (<span class="arithmatex">\(x \in \mathbb{R}\)</span>) with no control inputs:</p>
+<p><img alt="image" src="../../../images/lectures/lecture_1/lecture_1_1d_stability.png" /></p>
+<p>We can mark the equilibria by finding the roots, which are circled in black. Let's look at the middle one first; if we choose a point just to its right, the sign of <span class="arithmatex">\(\dot{x}\)</span> is negative, which is going to push us <em>back</em> to the equilibrium. If we choose a point on the left, then the positive <span class="arithmatex">\(\dot{x}\)</span> is also going to push us back towards the equilibrium. Because we'll wind up back at the equilibrium from any direction, we call the middle equilibrium point a <strong>stable</strong> equilibrium.</p>
+<p><img alt="image" src="../../../images/lectures/lecture_1/lecture_1_1d_stability_stable.png" /></p>
+<p>If we look at either the left or the right equilibrium, we can play the same game; if we choose a point close but to the right, the sign of <span class="arithmatex">\(\dot{x}\)</span> is positive, which is going to push us <em>away</em> from the equilibrium. A point on the left will also push us away, so no matter what, we'll be moving away from the equilibrium. As you can guess, we call the left and right equilibrium points <strong>unstable</strong> equilibria.</p>
+<p><img alt="image" src="../../../images/lectures/lecture_1/lecture_1_1d_stability_unstable.png" /></p>
+<p>From a more mathematical standpoint, we can see that the derivatives of <span class="arithmatex">\(f\)</span> at the equilibria determine the stability:</p>
+<div class="arithmatex">\[
+\begin{align}
+    \frac{\partial f}{\partial x}\Bigg|_{x_{eq}} &amp; &lt; 0 \quad \Rightarrow \quad \text{stable}, \\
+    \space \\
+    \frac{\partial f}{\partial x}\Bigg|_{x_{eq}} &amp; &gt; 0 \quad \Rightarrow \quad \text{unstable}. \\
+\end{align}
+\]</div>
+<p>In the case of the pendulum, we can intuitively see that the bottom and upright equilibria correspond to a stable and unstable one respectively. However, for this higher-dimensional system, how do we come up with a mathematically equivalent version? We know that the higher-dimensional equivalent to a scalar derivative is the Jacobian (<span class="arithmatex">\(\frac{\partial f}{\partial x}\)</span>), but what's the equivalent to the Jacobian being positive or negative? </p>
+<p>The answer lies in the eigenvalues! Let us linearize the dynamics at an equilibrium and perform an eigendecomposition of <span class="arithmatex">\(\frac{\partial f}{\partial x}\)</span>:</p>
+<div class="arithmatex">\[
+\begin{align}
+    \dot{x} &amp; = \frac{\partial f}{\partial x}\Bigg|_{x_{eq}}x, \\
+    \space \\
+    \Rightarrow \dot{x} &amp; = \underbrace{\Bigg[\begin{smallmatrix}
+        | &amp; &amp; | \\
+        v_{1} &amp; \cdots  &amp; v_{n} \\
+        | &amp; &amp; | \\
+    \end{smallmatrix}\Bigg]}_{T} \underbrace{\Bigg[\begin{smallmatrix}
+    \lambda_{1} &amp; &amp; 0 \\
+    &amp; \ddots &amp; \\
+    0 &amp; &amp; \lambda_{n}
+    \end{smallmatrix}\Bigg]}_{\Lambda} \underbrace{\Bigg[\begin{smallmatrix}
+        | &amp; &amp; | \\
+        v_{1} &amp; \cdots  &amp; v_{n} \\
+        | &amp; &amp; | \\
+    \end{smallmatrix}\Bigg]^{-1}}_{T^{-1}} x \\
+    \Rightarrow \dot{x} &amp; = T \Lambda T^{-1}x, \\
+    \space \\
+    \Rightarrow T^{-1}\dot{x} &amp; = \Lambda T^{-1}x, \\
+\end{align}
+\]</div>
+<p>where <span class="arithmatex">\(v_{i} \in \mathbb{R}^{n}\)</span> is the <span class="arithmatex">\(i\)</span>th eigenvector of <span class="arithmatex">\(\frac{\partial f}{\partial x}\)</span> and <span class="arithmatex">\(\lambda_{i} \in \mathbb{C}\)</span> (i.e., a complex scalar) is the corresponding eigenvalue. By relabeling the linear mapping, <span class="arithmatex">\(T^{-1}x\)</span>, as a new vector, <span class="arithmatex">\(z\)</span>, we can now analyze the system in terms of <span class="arithmatex">\(z\)</span>:</p>
+<div class="arithmatex">\[
+\begin{align}
+    \Rightarrow \dot{z} &amp; = \Lambda z, \\
+    \space \\
+    \Rightarrow \dot{z} &amp; = \Bigg[\begin{smallmatrix}
+    \lambda_{1} &amp; &amp; 0 \\
+    &amp; \ddots &amp; \\
+    0 &amp; &amp; \lambda_{n}
+    \end{smallmatrix}\Bigg]z, \\
+\end{align}
+\]</div>
+<p>then we can see that we essentially decoupled the higher-dimensional system into <em>multiple 1D</em> systems. Therefore we can evaluate the real parts of each eigenvalue of <span class="arithmatex">\(\frac{\partial f}{\partial x}\)</span> in a similar manner as before with the scalar case:</p>
+<div class="arithmatex">\[
+\begin{align}
+    \text{Re}\Big(\text{eigvals}\Big[\frac{\partial f}{\partial x}\Big|_{x_{eq}}\Big]\Big) &amp; &lt; 0 \quad \Rightarrow \quad \text{stable}, \\
+    \space \\
+    \text{Re}\Big(\text{eigvals}\Big[\frac{\partial f}{\partial x}\Big|_{x_{eq}}\Big]\Big) &amp; &gt; 0 \quad \Rightarrow \quad \text{unstable}. \\
+\end{align}
+\]</div>
+<p><strong>NOTE:</strong> If <em>any</em> of the eigenvalues' real parts is positive, then the system is <em>unstable</em>. Also, remember to evaluate <span class="arithmatex">\(\frac{\partial f}{\partial x}\)</span> at the equilibrium of interest!</p>
+<p>Applying our stability analysis to the pendulum:</p>
+<div class="arithmatex">\[
+\begin{align}
+    f(x) &amp; = \begin{bmatrix}
+        \dot{\theta}\\
+        -\frac{g}{l}\sin{\theta}
+    \end{bmatrix} \quad \Rightarrow \quad \frac{\partial f}{\partial x} = \begin{bmatrix}
+        0 &amp; 1 \\
+        -\frac{g}{l}\cos{\theta} &amp; 0
+    \end{bmatrix}, \\
+    \space \\
+    \space \\
+    \frac{\partial f}{\partial x} \Bigg|_{\theta = \pi} &amp; = \begin{bmatrix}
+        0 &amp; 1 \\
+        \frac{g}{l} &amp; 0
+    \end{bmatrix} \quad \Rightarrow \quad \text{eigvals}\Big(\frac{\partial f}{\partial x}\Big|_{\theta = \pi}\Big) = \pm \sqrt{\frac{g}{l}}, \\
+    \space \\
+    \frac{\partial f}{\partial x} \Bigg|_{\theta = 0} &amp; = \begin{bmatrix}
+        0 &amp; 1 \\
+        -\frac{g}{l} &amp; 0
+    \end{bmatrix} \quad \Rightarrow \quad \text{eigvals}\Big(\frac{\partial f}{\partial x}\Big|_{\theta = 0}\Big) = 0 \pm i\sqrt{\frac{g}{l}}. \\
+\end{align}
+\]</div>
+<p>As expected, at <span class="arithmatex">\(\theta = \pi\)</span>, a positive real component of an eigenvalue <span class="arithmatex">\(\Big(\sqrt{\frac{g}{l}}\Big)\)</span> exists, so the pendulum is unstable about the upright equilibrium. This matches our intuition.</p>
+<p>At <span class="arithmatex">\(\theta = 0\)</span>, we see that the real components of the eigenvalues are equal to 0. This isn't in our notes - what's going on?</p>
+<p>In the case of the pendulum, we can see that without damping, the pendulum will just keep swinging about the bottom equilibrium. We call this behavior <strong>marginally stable</strong>.</p>
+<p><strong>NOTE:</strong> In general, if <span class="arithmatex">\(\text{Re}\Big(\text{eigvals}\Big[\frac{\partial f}{\partial x}\Big|_{x_{eq}}\Big]\Big) = 0\)</span>, we can't say anything about the stability! It just so happens that the pendulum is marginally stable, but in general, we can't make any conclusions about the system's stability about that equilibrium. We'll have to go to fancier methods, like <strong>Lyapunov stability analysis</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
