@@ -1,0 +1,1098 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../background/">
+      
+      
+        <link rel="next" href="../recitations/">
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>Lectures - CMU Optimal Control 16-745</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2025" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="CMU Optimal Control 16-745" class="md-header__button md-logo" aria-label="CMU Optimal Control 16-745" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2S7 4 7 12c0 3.1.76 5.75 1.67 7.83A2 2 0 0 0 10.5 21h3a2 2 0 0 0 1.83-1.17C16.25 17.75 17 15.1 17 12c0-8-5-10-5-10m1.5 17h-3c-1-2.24-1.5-4.59-1.5-7 0-4.64 1.9-6.8 3-7.67 1.1.87 3 3.03 3 7.67 0 2.41-.5 4.76-1.5 7m6.5 3-3.86-1.55c.7-1.53 1.2-3.11 1.51-4.72m-9.79 4.72L4 22l2.35-6.27c.31 1.61.81 3.19 1.51 4.72M12 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CMU Optimal Control 16-745
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lectures
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Optimal-Control-16-745" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../course_calendar/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Course Calendar
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../background/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Background
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lectures
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../recitations/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Recitations
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../homeworks/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Homeworks
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../quizzes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quizzes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../piazza/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Piazza
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="CMU Optimal Control 16-745" class="md-nav__button md-logo" aria-label="CMU Optimal Control 16-745" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2S7 4 7 12c0 3.1.76 5.75 1.67 7.83A2 2 0 0 0 10.5 21h3a2 2 0 0 0 1.83-1.17C16.25 17.75 17 15.1 17 12c0-8-5-10-5-10m1.5 17h-3c-1-2.24-1.5-4.59-1.5-7 0-4.64 1.9-6.8 3-7.67 1.1.87 3 3.03 3 7.67 0 2.41-.5 4.76-1.5 7m6.5 3-3.86-1.55c.7-1.53 1.2-3.11 1.51-4.72m-9.79 4.72L4 22l2.35-6.27c.31 1.61.81 3.19 1.51 4.72M12 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2"/></svg>
+
+    </a>
+    CMU Optimal Control 16-745
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Optimal-Control-16-745" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course_calendar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Calendar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../background/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Background
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lectures
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recitations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homeworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Homeworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quizzes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quizzes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../piazza/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Piazza
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="2025">2025</h1>
+<p>Lectures will be streamed live on Zoom, through the link available from <a href="https://piazza.com/cmu/spring2025/16745/home">Piazza</a> and <a href="https://canvas.cmu.edu/courses/46532">Canvas</a>. After the lecture, the recording and all related materials will be made available here.</p>
+<table>
+<thead>
+<tr>
+<th>Lecture</th>
+<th>Topics</th>
+<th>Materials</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Introduction and Dynamics</td>
+<td><a href="https://www.youtube.com/watch?v=SvAYJC7jug8&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%201">slides</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Dynamics Discretization &amp; Stability</td>
+<td><a href="https://www.youtube.com/watch?v=_Swoo8n7DFM&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=2">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%202">slides</a></td>
+</tr>
+<tr>
+<td><strong>Optimization</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Optimization Pt. 1</td>
+<td><a href="https://www.youtube.com/watch?v=f7yF0KOV-sI&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=3">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%203">slides</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Optimization Pt. 2</td>
+<td><a href="https://www.youtube.com/watch?v=lIuPIlDxLNU&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=4">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%204">slides</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Optimization Pt. 3</td>
+<td><a href="https://www.youtube.com/watch?v=bsBXk17rff4&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=5">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%205">slides</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Regularization, Merit Functions, and Control History</td>
+<td><a href="https://www.youtube.com/watch?v=8N10U68kS5M&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=6">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%206">slides</a></td>
+</tr>
+<tr>
+<td><strong>Optimal Control</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Deterministic Optimal Control and Pontryagin</td>
+<td><a href="https://www.youtube.com/watch?v=ZoLmQB6C7WU&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=7">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%207">slides</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>LQR in 3 Ways</td>
+<td><a href="https://www.youtube.com/watch?v=9_je9YOKtew&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=8">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%208">slides</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Controllability &amp; Dynamic Programming</td>
+<td><a href="https://www.youtube.com/watch?v=RtGsW12LRjk&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=9">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%209">slides</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Convex MPC</td>
+<td><a href="https://www.youtube.com/watch?v=J7lh-uF3wlY&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=10">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2010">slides</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Nonlinear Trajectory Optimization</td>
+<td><a href="https://www.youtube.com/watch?v=ERGKQ2ieYW8&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=11">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2011">slides</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Differential Dynamic Programming</td>
+<td><a href="https://www.youtube.com/watch?v=JFiIZ8Iwj6Y&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=12">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2012">slides</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Direct Trajectory Optimization</td>
+<td><a href="https://www.youtube.com/watch?v=8VZ0MZ_JpgE&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=13">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2013">slides</a></td>
+</tr>
+<tr>
+<td><strong>Rotations</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Intro to 3D Rotations</td>
+<td><a href="https://www.youtube.com/watch?v=x5DJ8yh-674&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=14">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2014">slides</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Optimizing Rotations</td>
+<td><a href="https://www.youtube.com/watch?v=bR6xadliH-c&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=15">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2015">slides</a></td>
+</tr>
+<tr>
+<td>16</td>
+<td>LQR with Quaternions and Quadrotors</td>
+<td><a href="https://www.youtube.com/watch?v=1sKMUrS4Mvk&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=16">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2016">slides</a></td>
+</tr>
+<tr>
+<td><strong>Special Topics</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Hybrid Systems and Legged Robots</td>
+<td><a href="https://www.youtube.com/watch?v=QLyXkH4Jx1I&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=17">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2017">slides</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Iterative Learning Control</td>
+<td><a href="https://www.youtube.com/watch?v=vbW5G5GydDU&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=18">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2018">slides</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Stochastic Optimal Control and LQG</td>
+<td><a href="https://www.youtube.com/watch?v=FDZcYgEz5Qo&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=19">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2019">slides</a></td>
+</tr>
+<tr>
+<td>20</td>
+<td>How to Walk</td>
+<td><a href="https://www.youtube.com/watch?v=6mLonLAOpps&amp;list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&amp;index=20">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2020">slides</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="2024">2024</h1>
+<table>
+<thead>
+<tr>
+<th>Lecture</th>
+<th>Topics</th>
+<th>Materials</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Introduction and Dynamics</td>
+<td><a href="https://www.youtube.com/watch?v=Kj88Nory8ec">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%201">slides</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Dynamics Discretization &amp; Stability</td>
+<td><a href="https://youtu.be/Ne6oUqjAT6o">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%202">slides</a></td>
+</tr>
+<tr>
+<td><strong>Optimization</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Optimization Pt. 1</td>
+<td><a href="https://www.youtube.com/watch?v=FV8r2o0ZUiM">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%203">slides</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Optimization Pt. 2</td>
+<td><a href="https://www.youtube.com/watch?v=VPvpe75JHNQ">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%204">slides</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Optimization Pt. 3</td>
+<td><a href="https://www.youtube.com/watch?v=-f1pu8vsnYw">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%205">slides</a></td>
+</tr>
+<tr>
+<td><strong>Optimal Control</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Deterministic Optimal Control Intro</td>
+<td><a href="https://www.youtube.com/watch?v=u9vNBi62HsI">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%206">slides</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>The Linear Quadratic Regulator Three Ways</td>
+<td><a href="https://www.youtube.com/watch?v=LcLCE7KiEB8">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%207">slides</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Controllability and Dynamic Programming</td>
+<td><a href="https://www.youtube.com/watch?v=cgRaP_TYZow">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%208">slides</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Convex Model-Predictive Control</td>
+<td><a href="https://www.youtube.com/watch?v=i-XEj8JY4Y0">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%209">slides</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Nonlinear Trajectory Optimization</td>
+<td><a href="https://www.youtube.com/watch?v=t0vaNTZIC20">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2010">slides</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Differential Dynamic Programming</td>
+<td><a href="https://www.youtube.com/watch?v=qusvkcoHyz0">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2011">slides</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Direct Trajectory Optimization</td>
+<td><a href="https://youtu.be/8VAiAxa6-sM?si=OwQXgYkxcPXdHRyC">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2012">slides</a></td>
+</tr>
+<tr>
+<td><strong>Rotations</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Dealing with 3D Rotations</td>
+<td><a href="https://youtu.be/0ONcoIqfT5E?si=Q1at3Kxm8rOrmg2i">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2013">slides</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Optimizing Rotations</td>
+<td><a href="https://www.youtube.com/watch?v=8InVEfutyrQ">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2014">slides</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td>LQR with Quaternions and Quadrotors (2023 lecture)</td>
+<td><a href="https://youtu.be/AxmE2uTPglg?si=3yci5Z8Dkhttcmsj">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2015/Lecture%2015.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2015">code</a></td>
+</tr>
+<tr>
+<td><strong>Special Topics</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Hybrid Systems and Legged Robots (2023 lecture)</td>
+<td><a href="https://youtu.be/3k2HXavhaY0?si=5VEvY7aWaGthtOvB">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2016/Lecture%2016.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2016">code</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Iterative Learning Control</td>
+<td><a href="https://www.youtube.com/watch?v=sscRS2RMVvw&amp;t=1468s">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/master/Lecture%2017/Lecture%2017.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2017">code</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Stochastic Optimal Control and LQG</td>
+<td><a href="https://www.youtube.com/watch?v=gYXqNfmEW18">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/master/Lecture%2018/Lecture%2018.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2018">code</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Kalman Filters and Duality</td>
+<td><a href="https://www.youtube.com/watch?v=D2TvCKTEfbI">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/master/Lecture%2019/Lecture%2019.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2019">code</a></td>
+</tr>
+<tr>
+<td>20</td>
+<td>Convex Relaxation and Landing Rockets</td>
+<td><a href="https://www.youtube.com/watch?v=tiwFETCw5lw">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/master/Lecture%2020/Lecture%2020.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2020">code</a></td>
+</tr>
+<tr>
+<td>21</td>
+<td>Legged Robots and How to Walk with QPs</td>
+<td><a href="https://www.youtube.com/watch?v=O3V2h7-jIzg">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/master/Lecture%2021/Lecture%2021.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2021">code</a></td>
+</tr>
+<tr>
+<td>22</td>
+<td>Autonomous Driving</td>
+<td><a href="https://www.youtube.com/watch?v=4Fh0wIqaynQ">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/master/Lecture%2022/Lecture%2022.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2022">code</a></td>
+</tr>
+<tr>
+<td>23</td>
+<td>Calculus of Variations and Physics as Optimal Control</td>
+<td><a href="https://youtu.be/YbCb44ViwPU?si=eTXiPsourwF-aQ50">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/blob/master/Lecture%2023/Lecture%2023.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/master/Lecture%2023">code</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="2023">2023</h1>
+<table>
+<thead>
+<tr>
+<th>Lecture</th>
+<th>Topics</th>
+<th>Materials</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Introduction and Dynamics</td>
+<td><a href="https://youtu.be/6rUdAOCNXAU?si=YeY1J_Qo8MD-uSep">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%201/Intro.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%201">code</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Dynamics Discretization &amp; Stability</td>
+<td><a href="https://youtu.be/GwinMLqsNuw?si=R-p1PJ_FrNwfl1H3">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%202/Lecture%202.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%202">code</a></td>
+</tr>
+<tr>
+<td><strong>Optimization</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Optimization Pt. 1</td>
+<td><a href="https://youtu.be/WQRaUCNCYwI?si=BJhQbsUZbEWYvubI">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%203/Lecture%203.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%203">code</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Optimization Pt. 2</td>
+<td><a href="https://youtu.be/0U8S6qIBvKM?si=NX4fSO0-oIwxOlAj">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%204/Lecture%204.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%204">code</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Optimization pt. 3</td>
+<td><a href="https://youtu.be/V9oHEF1OUHQ?si=PzZ4V_Y48jMS6hHP">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%205/Lecture%205.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%205">code</a></td>
+</tr>
+<tr>
+<td><strong>Optimal Control</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Deterministic Optimal Control Intro</td>
+<td><a href="https://youtu.be/U9zrNwMXktQ?si=r-GPCgq7NIX5bwBL">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%206/Lecture%206.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%206">code</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>The Linear Quadratic Regulator Three Ways</td>
+<td><a href="https://youtu.be/yYmaNqA9_ZU?si=MY-U6_4HfhtBX3fb">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%207/Lecture%207.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%207">code</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Controllability and Dynamic Programming</td>
+<td><a href="https://youtu.be/WoGAwiMnCFA?si=wQFtTniN6-QlC_P-">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%208/Lecture%208.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%208">code</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Convex Model-Predictive Control</td>
+<td><a href="https://youtu.be/-5iWPI3BIkU?si=tRF-8LFNlDtca0tl">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%209/Lecture%209.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%209">code</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Nonlinear Trajectory Optimization</td>
+<td><a href="https://youtu.be/Wz5kwy1J8ZE?si=CB3dkjNadbzpXj0u">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2010/Lecture%2010.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2010">code</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Differential Dynamic Programming</td>
+<td><a href="https://youtu.be/hUf5YhSptLs?si=_uj_qYZNacnVxhFs">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2011/Lecture%2011.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2011">code</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Direct Trajectory Optimization</td>
+<td><a href="https://youtu.be/Oh4BfRX5ILg?si=oyGNnteoCkg4LeV3">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2012/Lecture%2012.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2012">code</a></td>
+</tr>
+<tr>
+<td><strong>Rotations</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Dealing with 3D Rotations</td>
+<td><a href="https://youtu.be/6iuN9l1bwm8?si=T9Y8VXZ0AYWHIiDe">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2013/Lecture%2013.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2013">code</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Optimizing Rotations</td>
+<td><a href="https://youtu.be/7t9HWMWBq70?si=SsNPUSlmQjIe7QAp">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2014/Lecture%2014.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2014">code</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td>LQR with Quaternions and Quadrotors</td>
+<td><a href="https://youtu.be/AxmE2uTPglg?si=3yci5Z8Dkhttcmsj">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2015/Lecture%2015.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2015">code</a></td>
+</tr>
+<tr>
+<td><strong>Special Topics</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Hybrid Systems and Legged Robots</td>
+<td><a href="https://youtu.be/3k2HXavhaY0?si=5VEvY7aWaGthtOvB">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2016/Lecture%2016.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2016">code</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Iterative Learning Control</td>
+<td><a href="https://youtu.be/JXZbrzJiUo4?si=uHAv-97zfqQWYM3u">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2017/Lecture%2017.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2017">code</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Stochastic Optimal Control and LQG</td>
+<td><a href="https://youtu.be/IEP8ZApmaPU?si=BacdAgQNXNPXcWag">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2018/Lecture%2018.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2018">code</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Kalman Filters and Duality</td>
+<td><a href="https://youtu.be/ZMciakM9YC0?si=gKvwoJbRiZ7fWYSD">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2019/Lecture%2019.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2019">code</a></td>
+</tr>
+<tr>
+<td>20</td>
+<td>Robust Control and Minimax Optimization</td>
+<td><a href="https://youtu.be/GmIFVr-HXPs?si=U5aPyRYyeEd3JyuA">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2020/Lecture%2020.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2020">code</a></td>
+</tr>
+<tr>
+<td>21</td>
+<td>Convex Relaxation and Landing Rockets</td>
+<td><a href="https://youtu.be/gwdcIxzp2N4?si=aDpUhNUEnTecaR-A">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2021/Lecture%2021.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2021">code</a></td>
+</tr>
+<tr>
+<td>22</td>
+<td>Legged Robots and How to Walk with QPs</td>
+<td><a href="https://youtu.be/zI_dbgtVYqM?si=R8NR34sjzPpxJg-B">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2022/Lecture%2022.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2022">code</a></td>
+</tr>
+<tr>
+<td>23</td>
+<td>Autonomous Driving and Game Theory</td>
+<td><a href="https://youtu.be/HfwZN9OFBO8?si=W2IjL58f08gY_WCy">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2023/Lecture%2023.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2023">code</a></td>
+</tr>
+<tr>
+<td>24</td>
+<td>Reinforcement Learning</td>
+<td><a href="https://youtu.be/5wK1GXuYMZ0?si=o1w5e9h90BtvNqUr">video</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/blob/main/Lecture%2024/Lecture%2024.pdf">slides</a>, <a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2023/tree/main/Lecture%2024">code</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="useful-links">Useful Links</h2>
+<p><a href="https://www.youtube.com/watch?v=6rUdAOCNXAU&amp;list=PLZnJoM76RM6KugDT9sw5zhAmqKnGeoLRa"><strong>2024 recitation Youtube playlist</strong></a></p>
+<p><a href="https://github.com/Optimal-Control-16-745/lecture-notebooks-2024"><strong>Github Repo</strong></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
