@@ -7,7 +7,7 @@
 | [Assignment 0](https://github.com/Optimal-Control-16-745/HW0_S25)     | [Solution 0](https://github.com/Optimal-Control-16-745/HW0_S25_Solutions)       | Julia Warm Up, Differentiation, Newton's Method       | 01/23/2025, 11:59 PM EST  |
 | [Assignment 1](https://github.com/Optimal-Control-16-745/HW1_S25)     | [Solution 1](https://github.com/Optimal-Control-16-745/HW1_S25_Solutions)       | Integrators, Equality and Inequality Constrained Optimization    | 02/6/2025, 11:59 PM EST  |
 | [Assignment 2](https://github.com/Optimal-Control-16-745/HW2_S25)     | [Solution 2](https://github.com/Optimal-Control-16-745/HW2_S25_Solutions)       | LQR, TVLQR, and Convex MPC    | 02/20/2025, 11:59 PM EST  |
-| [Assignment 3](https://github.com/Optimal-Control-16-745/HW3_S25)     | TBA       | NLP and iLQR   | 03/20/2025, 11:59 PM EST  |
+| [Assignment 3](https://github.com/Optimal-Control-16-745/HW3_S25)     | [Solution 3](https://github.com/Optimal-Control-16-745/HW3_S25_Solutions)       | NLP and iLQR   | 03/20/2025, 11:59 PM EST  |
 | [Assignment 4](https://github.com/Optimal-Control-16-745/HW4_S25)     | TBA       | ILC & Hybrid Traj Opt | 04/10/2025, 11:59 PM EST  |
 
 ## Submission Instructions

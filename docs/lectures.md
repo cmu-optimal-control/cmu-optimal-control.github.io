@@ -27,6 +27,7 @@ Lectures will be streamed live on Zoom, through the link available from [Piazza]
 | 17     | Hybrid Systems and Legged Robots  |[video](https://www.youtube.com/watch?v=QLyXkH4Jx1I&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=17), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2017) |
 | 18     | Iterative Learning Control  |[video](https://www.youtube.com/watch?v=vbW5G5GydDU&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=18), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2018) |
 | 19     | Stochastic Optimal Control and LQG  |[video](https://www.youtube.com/watch?v=FDZcYgEz5Qo&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=19), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2019) |
+| 20     | How to Walk  |[video](https://www.youtube.com/watch?v=6mLonLAOpps&list=PLZnJoM76RM6IAJfMXd1PgGNXn3dxhkVgI&index=20), [slides](https://github.com/Optimal-Control-16-745/lecture-notebooks/tree/main/Lecture%2020) |
 
 # 2024
 
